@@ -21,7 +21,7 @@ public class Product {
     private String description;
     private int price;
     private int quantity;
-    @OneToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
     @JoinColumn(name = "inventory_id",referencedColumnName = "id")
     private Inventory inventory;
     private String category;

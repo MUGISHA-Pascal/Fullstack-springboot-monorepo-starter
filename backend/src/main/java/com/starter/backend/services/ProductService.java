@@ -2,6 +2,7 @@ package com.starter.backend.services;
 
 import com.starter.backend.dtos.ProductDto;
 import com.starter.backend.exceptions.ApiRequestException;
+import com.starter.backend.models.Inventory;
 import com.starter.backend.models.Product;
 import com.starter.backend.repository.ProductRepository;
 import com.starter.backend.util.Constants;
@@ -47,6 +48,7 @@ public class ProductService {
     }
 
     public Product updateProduct(UUID id, ProductDto productDto){
+
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new ApiRequestException("Product with id " + id + " not found"));
 
@@ -55,7 +57,8 @@ public class ProductService {
         existingProduct.setPrice(productDto.getPrice());
         existingProduct.setQuantity(productDto.getQuantity());
         existingProduct.setCategory(productDto.getCategory());
-
+        Inventory inventory = new Inventory(productDto.getInventory().getQuantity(), productDto.getInventory().getLocation());
+       existingProduct.setInventory(inventory);
         return productRepository.save(existingProduct);
     }
 

@@ -32,4 +32,8 @@ public class Inventory {
     private LocalDateTime createdAt;
     @LastModifiedDate
     private LocalDateTime updatedAt;
+    public Inventory(int quantity, String location){
+        this.quantity = quantity;
+        this.location = location;
+    }
 }

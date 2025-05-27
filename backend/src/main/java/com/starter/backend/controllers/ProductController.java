@@ -47,6 +47,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public Product updateProduct(@PathVariable UUID id, @RequestBody ProductDto productDto){
+        System.out.println("called");
         return productService.updateProduct(id, productDto);
     }
 
