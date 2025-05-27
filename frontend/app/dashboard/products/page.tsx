@@ -62,7 +62,10 @@ export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<Product | null | any>(
+    null
+  );
   const { toast } = useToast();
 
   const [newProduct, setNewProduct] = useState({
@@ -106,7 +109,11 @@ export default function ProductsPage() {
       const response = await fetch("http://localhost:8081/api/v1/products");
       if (response.ok) {
         const data = await response.json();
-        setProducts(data);
+        const productsWithInventory = data.map((product: Product) => ({
+          ...product,
+          inventory: product.inventory || { quantity: 0, location: "" },
+        }));
+        setProducts(productsWithInventory);
       }
     } catch (error) {
       toast({
@@ -204,6 +211,99 @@ export default function ProductsPage() {
       toast({
         title: "Error",
         description: "Failed to add product",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleEditClick = (product: Product) => {
+    const productWithInventory = {
+      ...product,
+      inventory: product.inventory || { quantity: 0, location: "" },
+    };
+    console.log("product", productWithInventory);
+    setEditingProduct(productWithInventory);
+    setIsEditDialogOpen(true);
+  };
+  const handleEditProduct = async () => {
+    try {
+      if (!editingProduct) return;
+
+      const productDto = {
+        name: editingProduct.name,
+        description: editingProduct.description,
+        price: Number.parseInt(editingProduct.price.toString()),
+        quantity: Number.parseInt(editingProduct.quantity.toString()),
+        category: editingProduct.category,
+        inventory: {
+          quantity: Number.parseInt(
+            editingProduct.inventory.quantity.toString()
+          ),
+          location: editingProduct.inventory.location,
+        },
+      };
+
+      // Validate required fields
+      if (
+        !productDto.name ||
+        !productDto.description ||
+        !productDto.category ||
+        !productDto.inventory.location
+      ) {
+        toast({
+          title: "Validation Error",
+          description: "Please fill in all required fields",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (
+        isNaN(productDto.price) ||
+        isNaN(productDto.quantity) ||
+        isNaN(productDto.inventory.quantity)
+      ) {
+        toast({
+          title: "Validation Error",
+          description: "Price and quantity fields must be valid numbers",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const response = await fetch(
+        `http://localhost:8081/api/v1/products/${editingProduct.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productDto),
+        }
+      );
+
+      if (response.ok) {
+        toast({
+          title: "Success",
+          description: "Product updated successfully",
+        });
+        setIsEditDialogOpen(false);
+        setEditingProduct(null);
+        fetchProducts();
+      } else {
+        const errorData = await response.json();
+        console.log(errorData);
+        toast({
+          title: "Error",
+          description: errorData.message || "Failed to update product",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Error",
+        description: "Failed to update product",
         variant: "destructive",
       });
     }
@@ -423,13 +523,17 @@ export default function ProductsPage() {
                     <CardDescription>{product.description}</CardDescription>
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="sm">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleEditClick(product)}
+                    >
                       <Edit className="h-4 w-4" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => handleDeleteProduct(product.id)}
+                      onClick={() => handleDeleteProduct(product.id!)}
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -486,6 +590,155 @@ export default function ProductsPage() {
             </Card>
           ))}
         </div>
+
+        {/* Edit Product Dialog */}
+        <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Edit Product</DialogTitle>
+              <DialogDescription>
+                Update product details and inventory information
+              </DialogDescription>
+            </DialogHeader>
+            {editingProduct && (
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-name" className="text-right">
+                    Name
+                  </Label>
+                  <Input
+                    id="edit-name"
+                    value={editingProduct.name}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        name: e.target.value,
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-description" className="text-right">
+                    Description
+                  </Label>
+                  <Textarea
+                    id="edit-description"
+                    value={editingProduct.description}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        description: e.target.value,
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-price" className="text-right">
+                    Price
+                  </Label>
+                  <Input
+                    id="edit-price"
+                    type="number"
+                    value={editingProduct.price}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        price: Number(e.target.value),
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-quantity" className="text-right">
+                    Quantity
+                  </Label>
+                  <Input
+                    id="edit-quantity"
+                    type="number"
+                    value={editingProduct.quantity}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        quantity: Number(e.target.value),
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-category" className="text-right">
+                    Category
+                  </Label>
+                  <Input
+                    id="edit-category"
+                    value={editingProduct.category}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        category: e.target.value,
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="edit-location" className="text-right">
+                    Location
+                  </Label>
+                  <Input
+                    id="edit-location"
+                    value={editingProduct.inventory.location}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        inventory: {
+                          ...editingProduct.inventory,
+                          location: e.target.value,
+                        },
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label
+                    htmlFor="edit-inventoryQuantity"
+                    className="text-right"
+                  >
+                    Inventory Qty
+                  </Label>
+                  <Input
+                    id="edit-inventoryQuantity"
+                    type="number"
+                    value={editingProduct.inventory.quantity}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        inventory: {
+                          ...editingProduct.inventory,
+                          quantity: Number(e.target.value),
+                        },
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+              </div>
+            )}
+            <DialogFooter>
+              <Button
+                variant="outline"
+                onClick={() => setIsEditDialogOpen(false)}
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleEditProduct}>Update Product</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
