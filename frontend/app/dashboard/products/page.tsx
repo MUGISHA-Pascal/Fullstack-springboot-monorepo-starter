@@ -1,11 +1,23 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -14,36 +26,44 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Plus, Search, Edit, Trash2, Package, AlertTriangle } from "lucide-react"
-import { DashboardLayout } from "@/components/dashboard-layout"
-import { useToast } from "@/hooks/use-toast"
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Plus,
+  Search,
+  Edit,
+  Trash2,
+  Package,
+  AlertTriangle,
+} from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard-layout";
+import { useToast } from "@/hooks/use-toast";
+
+interface UpdateInventoryDto {
+  quantity: number;
+  location: string;
+}
 
 interface Product {
-  id: string
-  name: string
-  description: string
-  price: number
-  quantity: number
-  category: string
-  inventory?: {
-    id: string
-    quantity: number
-    location: string
-  }
+  id?: string;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  category: string;
+  inventory: UpdateInventoryDto;
 }
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null)
-  const { toast } = useToast()
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const { toast } = useToast();
 
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -51,117 +71,170 @@ export default function ProductsPage() {
     price: "",
     quantity: "",
     category: "",
-    inventoryLocation: "",
-    inventoryQuantity: "",
-  })
+    inventory: {
+      quantity: "",
+      location: "",
+    },
+  });
 
   useEffect(() => {
-    fetchProducts()
-  }, [])
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
-    let filtered = products
+    let filtered = products;
 
     if (searchTerm) {
       filtered = filtered.filter(
         (product) =>
           product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchTerm.toLowerCase()),
-      )
+          product.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
     }
 
     if (selectedCategory !== "all") {
-      filtered = filtered.filter((product) => product.category === selectedCategory)
+      filtered = filtered.filter(
+        (product) => product.category === selectedCategory
+      );
     }
 
-    setFilteredProducts(filtered)
-  }, [products, searchTerm, selectedCategory])
+    setFilteredProducts(filtered);
+  }, [products, searchTerm, selectedCategory]);
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("/api/products")
+      const response = await fetch("http://localhost:8081/api/v1/products");
       if (response.ok) {
-        const data = await response.json()
-        setProducts(data)
+        const data = await response.json();
+        setProducts(data);
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to fetch products",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch("/api/products", {
+      const productDto = {
+        name: newProduct.name,
+        description: newProduct.description,
+        price: Number.parseInt(newProduct.price),
+        quantity: Number.parseInt(newProduct.quantity),
+        category: newProduct.category,
+        inventory: {
+          quantity: Number.parseInt(newProduct.inventory.quantity),
+          location: newProduct.inventory.location,
+        },
+      };
+
+      console.log(
+        "Product DTO being sent:",
+        JSON.stringify(productDto, null, 2)
+      );
+
+      // Validate required fields
+      if (
+        !productDto.name ||
+        !productDto.description ||
+        !productDto.category ||
+        !productDto.inventory.location
+      ) {
+        toast({
+          title: "Validation Error",
+          description: "Please fill in all required fields",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (
+        isNaN(productDto.price) ||
+        isNaN(productDto.quantity) ||
+        isNaN(productDto.inventory.quantity)
+      ) {
+        toast({
+          title: "Validation Error",
+          description: "Price and quantity fields must be valid numbers",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const response = await fetch("http://localhost:8081/api/v1/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: newProduct.name,
-          description: newProduct.description,
-          price: Number.parseInt(newProduct.price),
-          quantity: Number.parseInt(newProduct.quantity),
-          category: newProduct.category,
-          inventoryLocation: newProduct.inventoryLocation,
-          inventoryQuantity: Number.parseInt(newProduct.inventoryQuantity),
-        }),
-      })
+        body: JSON.stringify(productDto),
+      });
 
       if (response.ok) {
         toast({
           title: "Success",
           description: "Product added successfully",
-        })
-        setIsAddDialogOpen(false)
+        });
+        setIsAddDialogOpen(false);
         setNewProduct({
           name: "",
           description: "",
           price: "",
           quantity: "",
           category: "",
-          inventoryLocation: "",
-          inventoryQuantity: "",
-        })
-        fetchProducts()
+          inventory: {
+            quantity: "",
+            location: "",
+          },
+        });
+        fetchProducts();
+      } else {
+        const errorData = await response.json();
+        toast({
+          title: "Error",
+          description: errorData.message || "Failed to add product",
+          variant: "destructive",
+        });
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to add product",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   const handleDeleteProduct = async (id: string) => {
     try {
-      const response = await fetch(`/api/products/${id}`, {
-        method: "DELETE",
-      })
+      const response = await fetch(
+        `http://localhost:8081/api/v1/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (response.ok) {
         toast({
           title: "Success",
           description: "Product deleted successfully",
-        })
-        fetchProducts()
+        });
+        fetchProducts();
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to delete product",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
-  const categories = [...new Set(products.map((p) => p.category))]
+  const categories = [...new Set(products.map((p) => p.category))];
 
   if (isLoading) {
     return (
@@ -170,7 +243,7 @@ export default function ProductsPage() {
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
         </div>
       </DashboardLayout>
-    )
+    );
   }
 
   return (
@@ -179,7 +252,9 @@ export default function ProductsPage() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold">Products</h1>
-            <p className="text-muted-foreground">Manage your product inventory</p>
+            <p className="text-muted-foreground">
+              Manage your product inventory
+            </p>
           </div>
           <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
             <DialogTrigger asChild>
@@ -191,7 +266,9 @@ export default function ProductsPage() {
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
                 <DialogTitle>Add New Product</DialogTitle>
-                <DialogDescription>Create a new product with inventory details</DialogDescription>
+                <DialogDescription>
+                  Create a new product with inventory details
+                </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-4 items-center gap-4">
@@ -201,7 +278,9 @@ export default function ProductsPage() {
                   <Input
                     id="name"
                     value={newProduct.name}
-                    onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+                    onChange={(e) =>
+                      setNewProduct({ ...newProduct, name: e.target.value })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -212,7 +291,12 @@ export default function ProductsPage() {
                   <Textarea
                     id="description"
                     value={newProduct.description}
-                    onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })}
+                    onChange={(e) =>
+                      setNewProduct({
+                        ...newProduct,
+                        description: e.target.value,
+                      })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -224,7 +308,9 @@ export default function ProductsPage() {
                     id="price"
                     type="number"
                     value={newProduct.price}
-                    onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
+                    onChange={(e) =>
+                      setNewProduct({ ...newProduct, price: e.target.value })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -236,7 +322,9 @@ export default function ProductsPage() {
                     id="quantity"
                     type="number"
                     value={newProduct.quantity}
-                    onChange={(e) => setNewProduct({ ...newProduct, quantity: e.target.value })}
+                    onChange={(e) =>
+                      setNewProduct({ ...newProduct, quantity: e.target.value })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -247,7 +335,9 @@ export default function ProductsPage() {
                   <Input
                     id="category"
                     value={newProduct.category}
-                    onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
+                    onChange={(e) =>
+                      setNewProduct({ ...newProduct, category: e.target.value })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -257,8 +347,36 @@ export default function ProductsPage() {
                   </Label>
                   <Input
                     id="location"
-                    value={newProduct.inventoryLocation}
-                    onChange={(e) => setNewProduct({ ...newProduct, inventoryLocation: e.target.value })}
+                    value={newProduct.inventory.location}
+                    onChange={(e) =>
+                      setNewProduct({
+                        ...newProduct,
+                        inventory: {
+                          ...newProduct.inventory,
+                          location: e.target.value,
+                        },
+                      })
+                    }
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="inventoryQuantity" className="text-right">
+                    Inventory Qty
+                  </Label>
+                  <Input
+                    id="inventoryQuantity"
+                    type="number"
+                    value={newProduct.inventory.quantity}
+                    onChange={(e) =>
+                      setNewProduct({
+                        ...newProduct,
+                        inventory: {
+                          ...newProduct.inventory,
+                          quantity: e.target.value,
+                        },
+                      })
+                    }
                     className="col-span-3"
                   />
                 </div>
@@ -308,7 +426,11 @@ export default function ProductsPage() {
                     <Button variant="ghost" size="sm">
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={() => handleDeleteProduct(product.id)}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleDeleteProduct(product.id)}
+                    >
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>
@@ -317,25 +439,47 @@ export default function ProductsPage() {
               <CardContent>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Price:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Price:
+                    </span>
                     <span className="font-semibold">${product.price}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Stock:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Stock:
+                    </span>
                     <div className="flex items-center gap-2">
                       <span className="font-semibold">{product.quantity}</span>
-                      {product.quantity < 10 && <AlertTriangle className="h-4 w-4 text-orange-500" />}
+                      {product.quantity < 10 && (
+                        <AlertTriangle className="h-4 w-4 text-orange-500" />
+                      )}
                     </div>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Category:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Category:
+                    </span>
                     <Badge variant="secondary">{product.category}</Badge>
                   </div>
                   {product.inventory && (
-                    <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Location:</span>
-                      <span className="text-sm">{product.inventory.location}</span>
-                    </div>
+                    <>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">
+                          Location:
+                        </span>
+                        <span className="text-sm">
+                          {product.inventory.location}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">
+                          Inventory:
+                        </span>
+                        <span className="text-sm">
+                          {product.inventory.quantity}
+                        </span>
+                      </div>
+                    </>
                   )}
                 </div>
               </CardContent>
@@ -356,5 +500,5 @@ export default function ProductsPage() {
         )}
       </div>
     </DashboardLayout>
-  )
+  );
 }

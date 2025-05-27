@@ -7958,3 +7958,509 @@ java.lang.ClassNotFoundException: javax.persistence.EntityNotFoundException
 
 2025-05-27T08:30:43.859+02:00 ERROR 40168 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
 2025-05-27T08:31:38.752+02:00  INFO 40168 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-05-27T08:33:04.722+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-27T08:33:04.729+02:00  INFO 40168 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-27T08:33:04.734+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-05-27T08:33:04.735+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5a0bc29c]]
+2025-05-27T08:33:04.735+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-05-27T08:33:04.757+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:33:04.767+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-27T08:33:04.784+02:00  INFO 40168 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-27T08:33:07.881+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 42452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T08:33:07.886+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T08:33:08.007+02:00  INFO 42452 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-27T08:33:08.008+02:00  INFO 42452 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-27T08:33:10.210+02:00  INFO 42452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T08:33:10.378+02:00  INFO 42452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 5 JPA repository interfaces.
+2025-05-27T08:33:12.192+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T08:33:12.207+02:00  INFO 42452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T08:33:12.208+02:00  INFO 42452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T08:33:12.248+02:00  INFO 42452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T08:33:12.248+02:00  INFO 42452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4239 ms
+2025-05-27T08:33:12.774+02:00  INFO 42452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T08:33:12.842+02:00  INFO 42452 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T08:33:12.916+02:00  INFO 42452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T08:33:13.426+02:00  INFO 42452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T08:33:13.458+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T08:33:13.920+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@62306a5c
+2025-05-27T08:33:13.923+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T08:33:13.966+02:00  WARN 42452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T08:33:14.001+02:00  INFO 42452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T08:33:15.760+02:00  INFO 42452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T08:33:16.050+02:00  INFO 42452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:33:17.197+02:00  INFO 42452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T08:33:17.199+02:00  WARN 42452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T08:33:17.800+02:00  INFO 42452 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-27T08:33:18.213+02:00  WARN 42452 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T08:33:19.298+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T08:33:20.969+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-27T08:33:21.058+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T08:33:21.059+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@47610414]]
+2025-05-27T08:33:21.060+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T08:33:21.081+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-27T08:33:21.114+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 13.987 seconds (process running for 15.076)
+2025-05-27T08:33:21.714+02:00  INFO 42452 --- [backend] [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-27T08:33:21.715+02:00  INFO 42452 --- [backend] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-27T08:33:21.719+02:00  INFO 42452 --- [backend] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-27T08:34:21.017+02:00  INFO 42452 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-05-27T08:35:15.658+02:00  INFO 42452 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-05-27T08:35:15.668+02:00  INFO 42452 --- [backend] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-27T08:35:15.672+02:00  INFO 42452 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-27T08:35:15.678+02:00  INFO 42452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-05-27T08:35:15.679+02:00  INFO 42452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@47610414]]
+2025-05-27T08:35:15.679+02:00  INFO 42452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-05-27T08:35:15.696+02:00  INFO 42452 --- [backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:35:15.709+02:00  INFO 42452 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-27T08:35:15.742+02:00  INFO 42452 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-27T08:35:15.961+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 42452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T08:35:15.962+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T08:35:16.845+02:00  INFO 42452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T08:35:16.898+02:00  INFO 42452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2025-05-27T08:35:17.450+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T08:35:17.454+02:00  INFO 42452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T08:35:17.455+02:00  INFO 42452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T08:35:17.490+02:00  INFO 42452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T08:35:17.490+02:00  INFO 42452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1522 ms
+2025-05-27T08:35:17.786+02:00  INFO 42452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T08:35:17.792+02:00  INFO 42452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T08:35:17.812+02:00  INFO 42452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T08:35:17.813+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-05-27T08:35:17.884+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@598914b6
+2025-05-27T08:35:17.886+02:00  INFO 42452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-05-27T08:35:17.892+02:00  WARN 42452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T08:35:17.894+02:00  INFO 42452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T08:35:18.303+02:00  INFO 42452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T08:35:18.631+02:00  INFO 42452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:35:19.145+02:00  INFO 42452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T08:35:19.148+02:00  WARN 42452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T08:35:20.184+02:00  WARN 42452 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T08:35:21.069+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T08:35:23.758+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-27T08:35:23.804+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T08:35:23.804+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5c1e3eda]]
+2025-05-27T08:35:23.805+02:00  INFO 42452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T08:35:23.806+02:00  INFO 42452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-27T08:35:23.818+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 7.935 seconds (process running for 137.78)
+2025-05-27T08:35:23.823+02:00  INFO 42452 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-27T08:35:25.199+02:00  INFO 42452 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 59 class path changes (0 additions, 0 deletions, 59 modifications)
+2025-05-27T08:35:25.205+02:00  INFO 42452 --- [backend] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-27T08:35:25.208+02:00  INFO 42452 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-27T08:35:25.215+02:00  INFO 42452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-05-27T08:35:25.217+02:00  INFO 42452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5c1e3eda]]
+2025-05-27T08:35:25.218+02:00  INFO 42452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-05-27T08:35:25.231+02:00  INFO 42452 --- [backend] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:35:25.235+02:00  INFO 42452 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-05-27T08:35:25.269+02:00  INFO 42452 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-05-27T08:35:25.587+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 42452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T08:35:25.589+02:00  INFO 42452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T08:35:26.929+02:00  WARN 42452 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2025-05-27T08:35:26.940+02:00  INFO 42452 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-27T08:35:26.997+02:00 ERROR 42452 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.starter.backend.BackendApplication.main(BackendApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.starter.backend.config.JacksonConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6962e1b4]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.5.jar:6.2.5]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Hibernate5Module
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.5.jar:6.2.5]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Hibernate5Module
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:578) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:557) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	... 41 common frames omitted
+
+2025-05-27T08:36:44.279+02:00  INFO 45352 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 45352 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T08:36:44.286+02:00  INFO 45352 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T08:36:44.469+02:00  INFO 45352 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-27T08:36:44.471+02:00  INFO 45352 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-27T08:36:47.091+02:00  INFO 45352 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T08:36:47.209+02:00  INFO 45352 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 5 JPA repository interfaces.
+2025-05-27T08:36:48.982+02:00  INFO 45352 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T08:36:49.047+02:00  INFO 45352 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T08:36:49.054+02:00  INFO 45352 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T08:36:49.142+02:00  INFO 45352 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T08:36:49.143+02:00  INFO 45352 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4671 ms
+2025-05-27T08:36:49.714+02:00  INFO 45352 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T08:36:49.777+02:00  INFO 45352 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T08:36:49.812+02:00  INFO 45352 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T08:36:50.098+02:00  INFO 45352 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T08:36:50.131+02:00  INFO 45352 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T08:36:50.589+02:00  INFO 45352 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5065b5f5
+2025-05-27T08:36:50.591+02:00  INFO 45352 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T08:36:50.629+02:00  WARN 45352 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T08:36:50.647+02:00  INFO 45352 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T08:36:51.985+02:00  INFO 45352 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T08:36:52.290+02:00  INFO 45352 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:36:53.508+02:00  INFO 45352 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T08:36:53.511+02:00  WARN 45352 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T08:36:54.180+02:00  INFO 45352 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-27T08:36:54.629+02:00  WARN 45352 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T08:36:55.701+02:00  INFO 45352 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T08:36:56.969+02:00  INFO 45352 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-27T08:36:57.046+02:00  INFO 45352 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T08:36:57.046+02:00  INFO 45352 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@65f3e11e]]
+2025-05-27T08:36:57.048+02:00  INFO 45352 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T08:36:57.075+02:00  INFO 45352 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-27T08:36:57.120+02:00  INFO 45352 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 14.353 seconds (process running for 16.131)
+2025-05-27T08:36:57.708+02:00  INFO 45352 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-27T08:36:57.709+02:00  INFO 45352 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-27T08:36:57.714+02:00  INFO 45352 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-05-27T08:37:05.818+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:37:05.822+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:37:06.752+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@674193ad, com.starter.backend.models.Product@147b821d, com.starter.backend.models.Product@6c86c6dd, com.starter.backend.models.Product@83e06cc, com.starter.backend.models.Product@6a7c5077, com.starter.backend.models.Product@3d97bc1f, com.starter.backend.models.Product@21731b29, com.starter.backend.models.Product@2b921968]
+2025-05-27T08:37:06.756+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@674193ad, com.starter.backend.models.Product@147b821d, com.starter.backend.models.Product@6c86c6dd, com.starter.backend.models.Product@83e06cc, com.starter.backend.models.Product@6a7c5077, com.starter.backend.models.Product@3d97bc1f, com.starter.backend.models.Product@21731b29, com.starter.backend.models.Product@2b921968]
+2025-05-27T08:37:36.864+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: Product com.starter.backend.controllers.ProductController.addProduct(ProductDto) with arguements : [ProductDto(name=biscuits, description=biscuits, price=200, quantity=200, category=food, inventory=com.starter.backend.dtos.UpdateInventoryDto@5ecbbbaf)]
+2025-05-27T08:37:36.868+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: Product com.starter.backend.services.ProductService.addProduct(ProductDto) with arguements : [ProductDto(name=biscuits, description=biscuits, price=200, quantity=200, category=food, inventory=com.starter.backend.dtos.UpdateInventoryDto@5ecbbbaf)]
+2025-05-27T08:37:36.967+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: Product com.starter.backend.services.ProductService.addProduct(ProductDto) with result : com.starter.backend.models.Product@6f07679e
+2025-05-27T08:37:36.967+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: Product com.starter.backend.controllers.ProductController.addProduct(ProductDto) with result : com.starter.backend.models.Product@6f07679e
+2025-05-27T08:37:36.986+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:37:36.987+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:37:36.994+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@368e0e37, com.starter.backend.models.Product@7e38cfd2, com.starter.backend.models.Product@25c523cc, com.starter.backend.models.Product@4267f4ea, com.starter.backend.models.Product@4deb527, com.starter.backend.models.Product@3c20ac31, com.starter.backend.models.Product@3077233a, com.starter.backend.models.Product@4dca417a, com.starter.backend.models.Product@3c4cb269]
+2025-05-27T08:37:36.995+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@368e0e37, com.starter.backend.models.Product@7e38cfd2, com.starter.backend.models.Product@25c523cc, com.starter.backend.models.Product@4267f4ea, com.starter.backend.models.Product@4deb527, com.starter.backend.models.Product@3c20ac31, com.starter.backend.models.Product@3077233a, com.starter.backend.models.Product@4dca417a, com.starter.backend.models.Product@3c4cb269]
+2025-05-27T08:37:42.010+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: String com.starter.backend.controllers.ProductController.deleteProduct(UUID) with arguements : [ce5be8e3-5582-43bd-b897-b8ed710a5424]
+2025-05-27T08:37:42.011+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: void com.starter.backend.services.ProductService.deleteProduct(UUID) with arguements : [ce5be8e3-5582-43bd-b897-b8ed710a5424]
+2025-05-27T08:37:42.054+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: void com.starter.backend.services.ProductService.deleteProduct(UUID) with result : null
+2025-05-27T08:37:42.056+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: String com.starter.backend.controllers.ProductController.deleteProduct(UUID) with result : Product with id ce5be8e3-5582-43bd-b897-b8ed710a5424 has been deleted successfully.
+2025-05-27T08:37:42.075+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:37:42.076+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:37:42.083+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@3923d45c, com.starter.backend.models.Product@66b9a817, com.starter.backend.models.Product@69ec4dc4, com.starter.backend.models.Product@773d462d, com.starter.backend.models.Product@509bfda2, com.starter.backend.models.Product@7b491eb6, com.starter.backend.models.Product@70c0fe76, com.starter.backend.models.Product@6d51d26d]
+2025-05-27T08:37:42.084+02:00  INFO 45352 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@3923d45c, com.starter.backend.models.Product@66b9a817, com.starter.backend.models.Product@69ec4dc4, com.starter.backend.models.Product@773d462d, com.starter.backend.models.Product@509bfda2, com.starter.backend.models.Product@7b491eb6, com.starter.backend.models.Product@70c0fe76, com.starter.backend.models.Product@6d51d26d]
+2025-05-27T08:37:54.680+02:00  WARN 45352 --- [backend] [http-nio-8081-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:37:54.699+02:00 ERROR 45352 --- [backend] [http-nio-8081-exec-8] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:37:54.950+02:00  WARN 45352 --- [backend] [http-nio-8081-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:37:54.963+02:00 ERROR 45352 --- [backend] [http-nio-8081-exec-9] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:37:57.010+02:00  INFO 45352 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-05-27T08:39:49.171+02:00  WARN 45352 --- [backend] [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:39:49.313+02:00 ERROR 45352 --- [backend] [http-nio-8081-exec-2] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:41:00.433+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-27T08:41:00.503+02:00  INFO 45352 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-27T08:41:00.551+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-05-27T08:41:00.563+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@65f3e11e]]
+2025-05-27T08:41:00.567+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-05-27T08:41:00.722+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:41:00.853+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-27T08:41:01.180+02:00  INFO 45352 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-27T08:41:10.041+02:00  INFO 48738 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 48738 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T08:41:10.051+02:00  INFO 48738 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T08:41:10.171+02:00  INFO 48738 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-27T08:41:10.172+02:00  INFO 48738 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-27T08:41:13.101+02:00  INFO 48738 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T08:41:13.216+02:00  INFO 48738 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 5 JPA repository interfaces.
+2025-05-27T08:41:14.456+02:00  INFO 48738 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T08:41:14.478+02:00  INFO 48738 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T08:41:14.479+02:00  INFO 48738 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T08:41:14.519+02:00  INFO 48738 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T08:41:14.519+02:00  INFO 48738 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4347 ms
+2025-05-27T08:41:15.069+02:00  INFO 48738 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T08:41:15.149+02:00  INFO 48738 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T08:41:15.195+02:00  INFO 48738 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T08:41:15.536+02:00  INFO 48738 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T08:41:15.580+02:00  INFO 48738 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T08:41:16.127+02:00  INFO 48738 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6141c8f
+2025-05-27T08:41:16.131+02:00  INFO 48738 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T08:41:16.191+02:00  WARN 48738 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T08:41:16.221+02:00  INFO 48738 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T08:41:17.685+02:00  INFO 48738 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T08:41:18.050+02:00  INFO 48738 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T08:41:19.212+02:00  INFO 48738 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T08:41:19.214+02:00  WARN 48738 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T08:41:19.714+02:00  INFO 48738 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-27T08:41:20.078+02:00  WARN 48738 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T08:41:21.081+02:00  INFO 48738 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T08:41:22.749+02:00  INFO 48738 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-27T08:41:22.836+02:00  INFO 48738 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T08:41:22.837+02:00  INFO 48738 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3a1936f8]]
+2025-05-27T08:41:22.838+02:00  INFO 48738 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T08:41:22.852+02:00  INFO 48738 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-27T08:41:22.871+02:00  INFO 48738 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 13.939 seconds (process running for 15.524)
+2025-05-27T08:41:23.179+02:00  INFO 48738 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-27T08:41:23.180+02:00  INFO 48738 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-27T08:41:23.184+02:00  INFO 48738 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-05-27T08:41:31.985+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:41:32.050+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-1] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:42:22.799+02:00  INFO 48738 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-05-27T08:42:27.287+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with arguements : [com.starter.backend.dtos.SIgninDto@39d2dfce]
+2025-05-27T08:42:28.170+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with error : Bad credentials
+2025-05-27T08:42:28.175+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-3] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Bad credentials
+2025-05-27T08:42:28.178+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-3] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:43:06.455+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signup(SignupDto) with arguements : [com.starter.backend.dtos.SignupDto@445b0cd6]
+2025-05-27T08:43:06.680+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signup(SignupDto) with error : User Role not set
+2025-05-27T08:43:06.682+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.starter.backend.exceptions.ApiRequestException: User Role not set] with root cause
+
+com.starter.backend.exceptions.ApiRequestException: User Role not set
+	at com.starter.backend.controllers.AuthController.lambda$signup$0(AuthController.java:72) ~[classes/:na]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.starter.backend.controllers.AuthController.signup(AuthController.java:72) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.5.jar:6.2.5]
+	at com.starter.backend.controllers.AuthController$$SpringCGLIB$$0.signup(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.starter.backend.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:54) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at com.starter.backend.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:54) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-05-27T08:43:06.711+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:46:54.718+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signup(SignupDto) with arguements : [com.starter.backend.dtos.SignupDto@3c505353]
+2025-05-27T08:46:56.647+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signup(SignupDto) with result : <201 CREATED Created,com.starter.backend.util.Response@42ef177e,[]>
+2025-05-27T08:47:08.360+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with arguements : [com.starter.backend.dtos.SIgninDto@28e927f4]
+2025-05-27T08:47:09.343+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with result : <200 OK OK,com.starter.backend.payload.JwtAuthResponse@13046cd0,[]>
+2025-05-27T08:47:13.144+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:13.167+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-8] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:47:13.168+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:13.172+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:13.301+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@3b02014b, com.starter.backend.models.Product@5f30391c, com.starter.backend.models.Product@472b68c6, com.starter.backend.models.Product@4d49904e, com.starter.backend.models.Product@388f5163, com.starter.backend.models.Product@7821dadf, com.starter.backend.models.Product@7c70cb8f, com.starter.backend.models.Product@390f4c7c]
+2025-05-27T08:47:13.306+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@3b02014b, com.starter.backend.models.Product@5f30391c, com.starter.backend.models.Product@472b68c6, com.starter.backend.models.Product@4d49904e, com.starter.backend.models.Product@388f5163, com.starter.backend.models.Product@7821dadf, com.starter.backend.models.Product@7c70cb8f, com.starter.backend.models.Product@390f4c7c]
+2025-05-27T08:47:14.452+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:14.462+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-10] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:47:14.477+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:14.477+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:14.496+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@20bf0fc2, com.starter.backend.models.Product@78af51d0, com.starter.backend.models.Product@6e64c860, com.starter.backend.models.Product@75e08e05, com.starter.backend.models.Product@2df95e64, com.starter.backend.models.Product@2fdabbda, com.starter.backend.models.Product@67b54189, com.starter.backend.models.Product@16546bdc]
+2025-05-27T08:47:14.499+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@20bf0fc2, com.starter.backend.models.Product@78af51d0, com.starter.backend.models.Product@6e64c860, com.starter.backend.models.Product@75e08e05, com.starter.backend.models.Product@2df95e64, com.starter.backend.models.Product@2fdabbda, com.starter.backend.models.Product@67b54189, com.starter.backend.models.Product@16546bdc]
+2025-05-27T08:47:23.804+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:23.807+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:23.824+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@666a6a6d, com.starter.backend.models.Product@69e25c70, com.starter.backend.models.Product@5c2be11f, com.starter.backend.models.Product@45c045d3, com.starter.backend.models.Product@704c6604, com.starter.backend.models.Product@bb6b5a1, com.starter.backend.models.Product@8969ed1, com.starter.backend.models.Product@4fbfbccd]
+2025-05-27T08:47:23.826+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@666a6a6d, com.starter.backend.models.Product@69e25c70, com.starter.backend.models.Product@5c2be11f, com.starter.backend.models.Product@45c045d3, com.starter.backend.models.Product@704c6604, com.starter.backend.models.Product@bb6b5a1, com.starter.backend.models.Product@8969ed1, com.starter.backend.models.Product@4fbfbccd]
+2025-05-27T08:47:23.842+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:23.843+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:23.857+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@196a578f, com.starter.backend.models.Product@468481d5, com.starter.backend.models.Product@1eb41d19, com.starter.backend.models.Product@6aec3993, com.starter.backend.models.Product@2171dd6e, com.starter.backend.models.Product@43196abc, com.starter.backend.models.Product@7dfbeb13, com.starter.backend.models.Product@7650759e]
+2025-05-27T08:47:23.858+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@196a578f, com.starter.backend.models.Product@468481d5, com.starter.backend.models.Product@1eb41d19, com.starter.backend.models.Product@6aec3993, com.starter.backend.models.Product@2171dd6e, com.starter.backend.models.Product@43196abc, com.starter.backend.models.Product@7dfbeb13, com.starter.backend.models.Product@7650759e]
+2025-05-27T08:47:27.640+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:27.646+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:47:27.667+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:27.677+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:47:31.851+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:31.854+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:31.880+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@7f222b38, com.starter.backend.models.Product@2eb04b00, com.starter.backend.models.Product@dd8e2aa, com.starter.backend.models.Product@3a3f719a, com.starter.backend.models.Product@542ae60e, com.starter.backend.models.Product@78ee4fc0, com.starter.backend.models.Product@32693fc5, com.starter.backend.models.Product@731b2bb3]
+2025-05-27T08:47:31.882+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@7f222b38, com.starter.backend.models.Product@2eb04b00, com.starter.backend.models.Product@dd8e2aa, com.starter.backend.models.Product@3a3f719a, com.starter.backend.models.Product@542ae60e, com.starter.backend.models.Product@78ee4fc0, com.starter.backend.models.Product@32693fc5, com.starter.backend.models.Product@731b2bb3]
+2025-05-27T08:47:31.907+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:31.915+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-7] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-05-27T08:47:32.089+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-05-27T08:47:32.091+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-05-27T08:47:32.097+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@6f9cf40b, com.starter.backend.models.Product@53e917e2, com.starter.backend.models.Product@125e426f, com.starter.backend.models.Product@57efd927, com.starter.backend.models.Product@5fdb437d, com.starter.backend.models.Product@44961963, com.starter.backend.models.Product@243b66a4, com.starter.backend.models.Product@d34b5e5]
+2025-05-27T08:47:32.099+02:00  INFO 48738 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@6f9cf40b, com.starter.backend.models.Product@53e917e2, com.starter.backend.models.Product@125e426f, com.starter.backend.models.Product@57efd927, com.starter.backend.models.Product@5fdb437d, com.starter.backend.models.Product@44961963, com.starter.backend.models.Product@243b66a4, com.starter.backend.models.Product@d34b5e5]
+2025-05-27T08:47:32.102+02:00  WARN 48738 --- [backend] [http-nio-8081-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'column' for method parameter type String is not present]
+2025-05-27T08:47:32.112+02:00 ERROR 48738 --- [backend] [http-nio-8081-exec-9] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource

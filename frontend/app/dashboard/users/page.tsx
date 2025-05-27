@@ -1,36 +1,42 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Search, UserPlus, Edit, Trash2, Users } from "lucide-react"
-import { DashboardLayout } from "@/components/dashboard-layout"
-import { useToast } from "@/hooks/use-toast"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Search, UserPlus, Edit, Trash2, Users } from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard-layout";
+import { useToast } from "@/hooks/use-toast";
 
 interface User {
-  id: string
-  email: string
-  firstName: string
-  lastName: string
-  mobile: string
-  gender: string
-  status: string
-  roles: Array<{ name: string }>
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  mobile: string;
+  gender: string;
+  status: string;
+  roles: Array<{ name: string }>;
 }
 
 export default function UsersPage() {
-  const [users, setUsers] = useState<User[]>([])
-  const [filteredUsers, setFilteredUsers] = useState<User[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState("")
-  const { toast } = useToast()
+  const [users, setUsers] = useState<User[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const { toast } = useToast();
 
   useEffect(() => {
-    fetchUsers()
-  }, [])
+    fetchUsers();
+  }, []);
 
   useEffect(() => {
     if (searchTerm) {
@@ -38,64 +44,64 @@ export default function UsersPage() {
         (user) =>
           user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
           user.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          user.email.toLowerCase().includes(searchTerm.toLowerCase()),
-      )
-      setFilteredUsers(filtered)
+          user.email.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredUsers(filtered);
     } else {
-      setFilteredUsers(users)
+      setFilteredUsers(users);
     }
-  }, [users, searchTerm])
+  }, [users, searchTerm]);
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("/api/users")
+      const response = await fetch("http://localhost:8081/api/v1/users");
       if (response.ok) {
-        const data = await response.json()
-        setUsers(data)
+        const data = await response.json();
+        setUsers(data);
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to fetch users",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleDeleteUser = async (id: string) => {
     try {
-      const response = await fetch(`/api/users/${id}`, {
+      const response = await fetch(`http://localhost:8081/api/v1/users/${id}`, {
         method: "DELETE",
-      })
+      });
 
       if (response.ok) {
         toast({
           title: "Success",
           description: "User deleted successfully",
-        })
-        fetchUsers()
+        });
+        fetchUsers();
       }
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to delete user",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "active":
-        return "bg-green-100 text-green-800"
+        return "bg-green-100 text-green-800";
       case "inactive":
-        return "bg-red-100 text-red-800"
+        return "bg-red-100 text-red-800";
       default:
-        return "bg-gray-100 text-gray-800"
+        return "bg-gray-100 text-gray-800";
     }
-  }
+  };
 
   if (isLoading) {
     return (
@@ -104,7 +110,7 @@ export default function UsersPage() {
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
         </div>
       </DashboardLayout>
-    )
+    );
   }
 
   return (
@@ -113,7 +119,9 @@ export default function UsersPage() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold">Users</h1>
-            <p className="text-muted-foreground">Manage system users and their permissions</p>
+            <p className="text-muted-foreground">
+              Manage system users and their permissions
+            </p>
           </div>
           <Button>
             <UserPlus className="mr-2 h-4 w-4" />
@@ -156,7 +164,11 @@ export default function UsersPage() {
                     <Button variant="ghost" size="sm">
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={() => handleDeleteUser(user.id)}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleDeleteUser(user.id)}
+                    >
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>
@@ -165,28 +177,44 @@ export default function UsersPage() {
               <CardContent>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Mobile:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Mobile:
+                    </span>
                     <span className="text-sm">{user.mobile}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Gender:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Gender:
+                    </span>
                     <span className="text-sm">{user.gender}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Status:</span>
-                    <Badge className={getStatusColor(user.status)}>{user.status}</Badge>
+                    <span className="text-sm text-muted-foreground">
+                      Status:
+                    </span>
+                    <Badge className={getStatusColor(user.status)}>
+                      {user.status}
+                    </Badge>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Roles:</span>
+                    <span className="text-sm text-muted-foreground">
+                      Roles:
+                    </span>
                     <div className="flex gap-1 flex-wrap">
                       {user.roles && user.roles.length > 0 ? (
                         user.roles.map((role, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="text-xs"
+                          >
                             {role.name}
                           </Badge>
                         ))
                       ) : (
-                        <span className="text-sm text-muted-foreground">No roles</span>
+                        <span className="text-sm text-muted-foreground">
+                          No roles
+                        </span>
                       )}
                     </div>
                   </div>
@@ -201,11 +229,13 @@ export default function UsersPage() {
             <Users className="mx-auto h-12 w-12 text-muted-foreground" />
             <h3 className="mt-2 text-sm font-semibold">No users found</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              {searchTerm ? "Try adjusting your search criteria" : "Get started by adding your first user"}
+              {searchTerm
+                ? "Try adjusting your search criteria"
+                : "Get started by adding your first user"}
             </p>
           </div>
         )}
       </div>
     </DashboardLayout>
-  )
+  );
 }
