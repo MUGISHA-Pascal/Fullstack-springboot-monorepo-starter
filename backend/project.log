@@ -2466,3 +2466,173 @@ Caused by: java.lang.ClassNotFoundException: com.starter.backend.exceptions.ApiR
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
 	... 100 common frames omitted
 
+2025-05-27T07:46:11.176+02:00  INFO 7006 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 7006 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T07:46:11.179+02:00  INFO 7006 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T07:46:11.245+02:00  INFO 7006 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-27T07:46:11.245+02:00  INFO 7006 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-27T07:46:12.889+02:00  INFO 7006 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T07:46:12.930+02:00  INFO 7006 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 5 JPA repository interfaces.
+2025-05-27T07:46:13.640+02:00  INFO 7006 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T07:46:13.663+02:00  INFO 7006 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T07:46:13.664+02:00  INFO 7006 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T07:46:13.703+02:00  INFO 7006 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T07:46:13.704+02:00  INFO 7006 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2457 ms
+2025-05-27T07:46:14.053+02:00  INFO 7006 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T07:46:14.087+02:00  INFO 7006 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T07:46:14.114+02:00  INFO 7006 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T07:46:14.316+02:00  INFO 7006 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T07:46:14.335+02:00  INFO 7006 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T07:46:14.593+02:00  INFO 7006 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2fa5530
+2025-05-27T07:46:14.594+02:00  INFO 7006 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T07:46:14.630+02:00  WARN 7006 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T07:46:14.642+02:00  INFO 7006 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T07:46:15.433+02:00  INFO 7006 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T07:46:15.610+02:00  INFO 7006 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T07:46:16.196+02:00  INFO 7006 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T07:46:16.198+02:00  WARN 7006 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T07:46:16.599+02:00  WARN 7006 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'inventoryController': Lookup method resolution failed
+2025-05-27T07:46:16.600+02:00  INFO 7006 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T07:46:16.603+02:00  INFO 7006 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-27T07:46:16.607+02:00  INFO 7006 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-27T07:46:16.612+02:00  INFO 7006 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-27T07:46:16.633+02:00  INFO 7006 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-27T07:46:16.649+02:00 ERROR 7006 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'inventoryController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.starter.backend.BackendApplication.main(BackendApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.starter.backend.controllers.InventoryController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@64aaf5f4]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/starter/backend/dtos/UpdateInventoryDto
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.5.jar:6.2.5]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.starter.backend.dtos.UpdateInventoryDto
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:578) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:557) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	... 30 common frames omitted
+
+2025-05-27T07:47:18.046+02:00  INFO 7889 --- [backend] [main] c.s.backend.BackendApplicationTests      : Starting BackendApplicationTests using Java 21.0.6 with PID 7889 (started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T07:47:18.049+02:00  INFO 7889 --- [backend] [main] c.s.backend.BackendApplicationTests      : The following 1 profile is active: "dev"
+2025-05-27T07:47:19.771+02:00  INFO 7889 --- [backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T07:47:19.868+02:00  INFO 7889 --- [backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 5 JPA repository interfaces.
+2025-05-27T07:47:20.892+02:00  INFO 7889 --- [backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T07:47:20.959+02:00  INFO 7889 --- [backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T07:47:20.994+02:00  INFO 7889 --- [backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T07:47:21.373+02:00  INFO 7889 --- [backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T07:47:21.415+02:00  INFO 7889 --- [backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T07:47:21.802+02:00  INFO 7889 --- [backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@626766fd
+2025-05-27T07:47:21.804+02:00  INFO 7889 --- [backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T07:47:21.844+02:00  WARN 7889 --- [backend] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T07:47:21.875+02:00  INFO 7889 --- [backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T07:47:23.061+02:00  INFO 7889 --- [backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T07:47:23.252+02:00  INFO 7889 --- [backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T07:47:23.788+02:00  INFO 7889 --- [backend] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T07:47:23.790+02:00  WARN 7889 --- [backend] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T07:47:24.264+02:00  INFO 7889 --- [backend] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-27T07:47:24.619+02:00  WARN 7889 --- [backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T07:47:25.447+02:00  INFO 7889 --- [backend] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T07:47:27.137+02:00  INFO 7889 --- [backend] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T07:47:27.140+02:00  INFO 7889 --- [backend] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4077e676]]
+2025-05-27T07:47:27.141+02:00  INFO 7889 --- [backend] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T07:47:27.165+02:00  INFO 7889 --- [backend] [main] c.s.backend.BackendApplicationTests      : Started BackendApplicationTests in 9.513 seconds (process running for 10.245)
+2025-05-27T07:47:28.164+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-05-27T07:47:28.165+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4077e676]]
+2025-05-27T07:47:28.165+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-05-27T07:47:28.177+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T07:47:28.181+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-27T07:47:28.192+02:00  INFO 7889 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-27T07:47:56.746+02:00  INFO 8378 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 8378 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-05-27T07:47:56.748+02:00  INFO 8378 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-05-27T07:47:56.825+02:00  INFO 8378 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-27T07:47:56.826+02:00  INFO 8378 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-27T07:47:58.164+02:00  INFO 8378 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-27T07:47:58.225+02:00  INFO 8378 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2025-05-27T07:47:58.864+02:00  INFO 8378 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-27T07:47:58.873+02:00  INFO 8378 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-27T07:47:58.874+02:00  INFO 8378 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-05-27T07:47:58.896+02:00  INFO 8378 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-27T07:47:58.896+02:00  INFO 8378 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2068 ms
+2025-05-27T07:47:59.172+02:00  INFO 8378 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-27T07:47:59.197+02:00  INFO 8378 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-05-27T07:47:59.212+02:00  INFO 8378 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-27T07:47:59.332+02:00  INFO 8378 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-27T07:47:59.352+02:00  INFO 8378 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-27T07:47:59.620+02:00  INFO 8378 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@515bcc3c
+2025-05-27T07:47:59.622+02:00  INFO 8378 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-27T07:47:59.643+02:00  WARN 8378 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-27T07:47:59.656+02:00  INFO 8378 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-27T07:48:00.399+02:00  INFO 8378 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-27T07:48:00.581+02:00  INFO 8378 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-27T07:48:01.065+02:00  INFO 8378 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-27T07:48:01.066+02:00  WARN 8378 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-27T07:48:01.487+02:00  INFO 8378 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-27T07:48:01.797+02:00  WARN 8378 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-27T07:48:02.685+02:00  INFO 8378 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-27T07:48:03.590+02:00  INFO 8378 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-27T07:48:03.645+02:00  INFO 8378 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-05-27T07:48:03.646+02:00  INFO 8378 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@78875352]]
+2025-05-27T07:48:03.646+02:00  INFO 8378 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-05-27T07:48:03.660+02:00  INFO 8378 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-27T07:48:03.675+02:00  INFO 8378 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 7.444 seconds (process running for 8.352)
+2025-05-27T07:48:03.794+02:00  INFO 8378 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-27T07:48:03.798+02:00  INFO 8378 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-27T07:48:03.804+02:00  INFO 8378 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-05-27T07:49:03.617+02:00  INFO 8378 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
