@@ -54,7 +54,9 @@ export default function UsersPage() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:8081/api/v1/users");
+      const response = await fetch(
+        "http://localhost:8081/api/v1/users?column=firstName&size=10&page=1"
+      );
       if (response.ok) {
         const data = await response.json();
         setUsers(data);
