@@ -4,6 +4,7 @@ import com.starter.backend.dtos.UserUpdateDto;
 import com.starter.backend.exceptions.ApiRequestException;
 import com.starter.backend.exceptions.AppException;
 import com.starter.backend.exceptions.ResourceNotFoundException;
+import com.starter.backend.models.Role;
 import com.starter.backend.models.User;
 import com.starter.backend.repository.RoleRepository;
 import com.starter.backend.repository.UserRepository;
@@ -13,10 +14,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -41,34 +46,51 @@ public class UserService {
         Constants.validatePageNumberAndPageSize(page,size);
         Pageable pageable = (Pageable) PageRequest.of(page,size, Sort.Direction.ASC,column);
         Page<User> users = userRepository.findAll(pageable);
+        System.out.println("users"+users);
         return users;
     }
-    public User getLoggedInUser(){
-        String email;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            email = ((UserDetails) principal).getUsername();
-        }else{
-            email=principal.toString();
+    public UUID getLoggedInUserId() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null && authentication.getPrincipal() instanceof UserDetails userDetails) {
+            String email = userDetails.getUsername();
+            System.out.println("email "+email);
+            User user= userRepository.findByEmail(email).orElseThrow(() -> new ApiRequestException("User with email " + email + " not found"));
+            return user.getId();
         }
-        User findByEmail = userRepository.findByEmail(email).orElseThrow(()-> new ApiRequestException("user with email "+email+" not found"));
-    return findByEmail;
+
+        throw new ApiRequestException("No authenticated user found");
     }
-    public User updateUser(UUID userId, UserUpdateDto userUpdateRequest){
-        User user  = userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("get user by id",""+userId,new User()));
-        if(getLoggedInUser().getId() != user.getId()){
-            throw new AppException("you are not authorized to update");
-        }
-        if(userRepository.existsByMobile(userUpdateRequest.getMobile()) && !(userUpdateRequest.getMobile().equalsIgnoreCase(user.getMobile()))){
+    public User updateUser(UUID userId, UserUpdateDto userUpdateRequest) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userId.toString()));
+
+//        if (!Objects.equals(getLoggedInUserId(), user.getId())) {
+//            throw new AppException("You are not authorized to update this user");
+//        }
+
+        if (userRepository.existsByMobile(userUpdateRequest.getMobile())
+                && !userUpdateRequest.getMobile().equalsIgnoreCase(user.getMobile())) {
             throw new AppException("Phone number already in use");
-        }else{
+        } else {
             user.setMobile(userUpdateRequest.getMobile());
         }
+
         user.setFirstName(userUpdateRequest.getFirstName());
         user.setLastName(userUpdateRequest.getLastName());
         user.setGender(userUpdateRequest.getGender());
         user.setEmail(userUpdateRequest.getEmail());
-        userRepository.save(user);
-        return user;
+        user.setStatus(userUpdateRequest.getStatus());
+
+        if (userUpdateRequest.getRole() == null || userUpdateRequest.getRole().length == 0) {
+            throw new AppException("At least one role must be specified");
+        }
+
+        Role role = roleRepository.findByName(userUpdateRequest.getRole()[0])
+                .orElseThrow(() -> new ApiRequestException("Role " + userUpdateRequest.getRole()[0] + " not found"));
+
+        user.setRoles(new HashSet<>(Set.of(role)));
+
+        return userRepository.save(user);
     }
 }

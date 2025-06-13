@@ -29,6 +29,7 @@ private UserService userService;
     @GetMapping("/paginated")
     public Page<User> getUsers(@RequestParam(value = "page" ,defaultValue = Constants.DEFAULT_PAGE_NUMBER) int page,@RequestParam(value = "size",defaultValue = Constants.DEFAULT_PAGE_SIZE) int size,@RequestParam(value = "column") String column){
     System.out.println(column);
+
     return userService.getAllUsers(page,size,column);
 }
 @GetMapping
