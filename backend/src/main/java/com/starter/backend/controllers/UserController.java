@@ -3,6 +3,7 @@ package com.starter.backend.controllers;
 import com.starter.backend.dtos.UserUpdateDto;
 import com.starter.backend.models.User;
 import com.starter.backend.payload.ApiResponse;
+import com.starter.backend.repository.UserRepository;
 import com.starter.backend.services.UserService;
 import com.starter.backend.util.Constants;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -21,9 +23,17 @@ import java.util.UUID;
 public class UserController {
 @Autowired
 private UserService userService;
-@GetMapping
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping("/paginated")
     public Page<User> getUsers(@RequestParam(value = "page" ,defaultValue = Constants.DEFAULT_PAGE_NUMBER) int page,@RequestParam(value = "size",defaultValue = Constants.DEFAULT_PAGE_SIZE) int size,@RequestParam(value = "column") String column){
+    System.out.println(column);
     return userService.getAllUsers(page,size,column);
+}
+@GetMapping
+public List<User> getAllUsers(){
+    return userRepository.findAll();
 }
 @DeleteMapping(path = "/{userId}")
     public ResponseEntity<ApiResponse> deleteUser(@Parameter(description = "userId",required = true) @PathVariable("userId") UUID userId){
