@@ -66,31 +66,12 @@ export default function FilesPage() {
 
   const fetchFiles = async () => {
     try {
-      // Mock data since we don't have a real endpoint
-      const mockFiles: FileItem[] = [
-        {
-          id: "1",
-          filename: "product-catalog.pdf",
-          size: 2048000,
-          uploadedAt: "2024-01-15T10:30:00Z",
-          type: "application/pdf",
-        },
-        {
-          id: "2",
-          filename: "inventory-report.xlsx",
-          size: 1024000,
-          uploadedAt: "2024-01-14T15:45:00Z",
-          type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        },
-        {
-          id: "3",
-          filename: "product-image.jpg",
-          size: 512000,
-          uploadedAt: "2024-01-13T09:20:00Z",
-          type: "image/jpeg",
-        },
-      ];
-      setFiles(mockFiles);
+      const response = await fetch("http://localhost:8081/api/v1/files");
+      if (!response.ok) {
+        throw new Error("Failed to fetch files");
+      }
+      const data = await response.json();
+      setFiles(data);
     } catch (error) {
       toast({
         title: "Error",
@@ -115,22 +96,26 @@ export default function FilesPage() {
         {
           method: "POST",
           body: formData,
+          credentials: "include",
         }
       );
 
-      if (response.ok) {
-        toast({
-          title: "Success",
-          description: "File uploaded successfully",
-        });
-        setIsUploadDialogOpen(false);
-        setSelectedFile(null);
-        fetchFiles();
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(error || "Failed to upload file");
       }
+
+      toast({
+        title: "Success",
+        description: "File uploaded successfully",
+      });
+      setIsUploadDialogOpen(false);
+      setSelectedFile(null);
+      fetchFiles();
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to upload file",
+        description: error instanceof Error ? error.message : "Failed to upload file",
         variant: "destructive",
       });
     } finally {
@@ -141,23 +126,27 @@ export default function FilesPage() {
   const handleDownload = async (id: string, filename: string) => {
     try {
       const response = await fetch(
-        `http://localhost:8081/api/v1/files/download/${id}`
+        `http://localhost:8081/api/v1/files/download/${id}`,
+        {
+          credentials: "include",
+        }
       );
-      if (response.ok) {
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a);
+      if (!response.ok) {
+        throw new Error("Failed to download file");
       }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to download file",
+        description: error instanceof Error ? error.message : "Failed to download file",
         variant: "destructive",
       });
     }
@@ -165,11 +154,48 @@ export default function FilesPage() {
 
   const handlePreview = async (id: string) => {
     try {
-      window.open(`http://localhost:8081/api/v1/files/preview/${id}`, "_blank");
+      const response = await fetch(
+        `http://localhost:8081/api/v1/files/preview/${id}`,
+        {
+          credentials: "include",
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to preview file");
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      window.open(url, "_blank");
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to preview file",
+        description: error instanceof Error ? error.message : "Failed to preview file",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/files/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to delete file");
+      }
+      toast({
+        title: "Success",
+        description: "File deleted successfully",
+      });
+      fetchFiles();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to delete file",
         variant: "destructive",
       });
     }
@@ -308,7 +334,11 @@ export default function FilesPage() {
                     <Download className="h-4 w-4 mr-1" />
                     Download
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleDelete(file.id)}
+                  >
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
