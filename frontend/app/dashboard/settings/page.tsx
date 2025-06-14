@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -24,17 +24,274 @@ import { Moon, Sun, Palette } from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { useAuth } from "@/components/auth-provider";
 import { Separator } from "@/components/ui/separator";
+import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "next-themes";
+
+interface Settings {
+  email: string;
+  firstName: string;
+  lastName: string;
+  mobile: string;
+  gender: string;
+  status: string;
+  role: string[];
+  notificationSettings: {
+    emailNotifications: boolean;
+    lowStockAlerts: boolean;
+    newUserRegistrations: boolean;
+    systemUpdates: boolean;
+  };
+  appearanceSettings: {
+    theme: string;
+    density: string;
+  };
+}
 
 export default function SettingsPage() {
   const { user } = useAuth();
   const [isSaving, setIsSaving] = useState(false);
+  const [settings, setSettings] = useState<Settings | null>(null);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const { toast } = useToast();
+  const { setTheme } = useTheme();
 
-  const handleSave = async () => {
-    setIsSaving(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSaving(false);
+  // Apply theme and density when settings are loaded
+  useEffect(() => {
+    if (settings?.appearanceSettings?.theme) {
+      setTheme(settings.appearanceSettings.theme);
+    }
+    if (settings?.appearanceSettings?.density) {
+      document.body.classList.remove("compact", "comfortable", "spacious");
+      document.body.classList.add(settings.appearanceSettings.density);
+    }
+  }, [settings?.appearanceSettings?.theme, settings?.appearanceSettings?.density, setTheme]);
+
+  useEffect(() => {
+    if (user?.id) {
+      fetchSettings();
+    }
+  }, [user?.id]);
+
+  const fetchSettings = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/settings/user/${user?.id}`,
+        {
+          credentials: "include",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch settings");
+      }
+      const data = await response.json();
+      setSettings(data.data);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to fetch settings",
+        variant: "destructive",
+      });
+    }
   };
+
+  const handleSaveProfile = async () => {
+    if (!settings) return;
+
+    setIsSaving(true);
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/settings/user/${user?.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+          },
+          credentials: "include",
+          body: JSON.stringify({
+            email: settings.email,
+            firstName: settings.firstName,
+            lastName: settings.lastName,
+            mobile: settings.mobile,
+            gender: settings.gender,
+            status: settings.status,
+            role: settings.role,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update profile");
+      }
+
+      toast({
+        title: "Success",
+        description: "Profile updated successfully",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to update profile",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleSavePassword = async () => {
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      toast({
+        title: "Error",
+        description: "Please fill in all password fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      toast({
+        title: "Error",
+        description: "New passwords do not match",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSaving(true);
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/settings/user/${user?.id}/password`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+          },
+          credentials: "include",
+          body: JSON.stringify({
+            currentPassword,
+            newPassword,
+            confirmPassword,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update password");
+      }
+
+      toast({
+        title: "Success",
+        description: "Password updated successfully",
+      });
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to update password",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleSaveNotifications = async () => {
+    if (!settings) return;
+
+    setIsSaving(true);
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/settings/user/${user?.id}/notifications`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+          },
+          credentials: "include",
+          body: JSON.stringify(settings.notificationSettings),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update notification settings");
+      }
+
+      toast({
+        title: "Success",
+        description: "Notification settings updated successfully",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to update notification settings",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleSaveAppearance = async () => {
+    if (!settings) return;
+
+    setIsSaving(true);
+    try {
+      const response = await fetch(
+        `http://localhost:8081/api/v1/settings/user/${user?.id}/appearance`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+          },
+          credentials: "include",
+          body: JSON.stringify(settings.appearanceSettings),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update appearance settings");
+      }
+
+      // Update theme and density immediately after save
+      setTheme(settings.appearanceSettings.theme);
+      document.body.classList.remove("compact", "comfortable", "spacious");
+      document.body.classList.add(settings.appearanceSettings.density);
+
+      toast({
+        title: "Success",
+        description: "Appearance settings updated successfully",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to update appearance settings",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  if (!settings) {
+    return (
+      <DashboardLayout>
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>
@@ -68,12 +325,21 @@ export default function SettingsPage() {
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
                       id="firstName"
-                      defaultValue={user?.firstName || ""}
+                      value={settings.firstName}
+                      onChange={(e) =>
+                        setSettings({ ...settings, firstName: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" defaultValue={user?.lastName || ""} />
+                    <Input
+                      id="lastName"
+                      value={settings.lastName}
+                      onChange={(e) =>
+                        setSettings({ ...settings, lastName: e.target.value })
+                      }
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -81,12 +347,20 @@ export default function SettingsPage() {
                   <Input
                     id="email"
                     type="email"
-                    defaultValue={user?.email || ""}
+                    value={settings.email}
+                    onChange={(e) =>
+                      setSettings({ ...settings, email: e.target.value })
+                    }
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="role">Role</Label>
-                  <Select defaultValue={user?.roles?.[0]?.name || "user"}>
+                  <Select
+                    value={settings.role[0]}
+                    onValueChange={(value) =>
+                      setSettings({ ...settings, role: [value] })
+                    }
+                  >
                     <SelectTrigger id="role">
                       <SelectValue placeholder="Select role" />
                     </SelectTrigger>
@@ -98,61 +372,7 @@ export default function SettingsPage() {
                   </Select>
                 </div>
                 <div className="flex justify-end">
-                  <Button onClick={handleSave} disabled={isSaving}>
-                    {isSaving ? "Saving..." : "Save Changes"}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Company Information</CardTitle>
-                <CardDescription>Update your company details.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name</Label>
-                  <Input id="companyName" placeholder="Acme Inc." />
-                </div>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="industry">Industry</Label>
-                    <Select defaultValue="retail">
-                      <SelectTrigger id="industry">
-                        <SelectValue placeholder="Select industry" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="retail">Retail</SelectItem>
-                        <SelectItem value="manufacturing">
-                          Manufacturing
-                        </SelectItem>
-                        <SelectItem value="technology">Technology</SelectItem>
-                        <SelectItem value="healthcare">Healthcare</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="size">Company Size</Label>
-                    <Select defaultValue="medium">
-                      <SelectTrigger id="size">
-                        <SelectValue placeholder="Select size" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="small">1-50 employees</SelectItem>
-                        <SelectItem value="medium">51-200 employees</SelectItem>
-                        <SelectItem value="large">
-                          201-1000 employees
-                        </SelectItem>
-                        <SelectItem value="enterprise">
-                          1000+ employees
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <Button onClick={handleSave} disabled={isSaving}>
+                  <Button onClick={handleSaveProfile} disabled={isSaving}>
                     {isSaving ? "Saving..." : "Save Changes"}
                   </Button>
                 </div>
@@ -177,7 +397,18 @@ export default function SettingsPage() {
                         Receive notifications via email.
                       </p>
                     </div>
-                    <Switch defaultChecked />
+                    <Switch
+                      checked={settings.notificationSettings.emailNotifications}
+                      onCheckedChange={(checked) =>
+                        setSettings({
+                          ...settings,
+                          notificationSettings: {
+                            ...settings.notificationSettings,
+                            emailNotifications: checked,
+                          },
+                        })
+                      }
+                    />
                   </div>
                   <Separator />
                   <div className="flex items-center justify-between">
@@ -187,7 +418,18 @@ export default function SettingsPage() {
                         Get notified when products are running low.
                       </p>
                     </div>
-                    <Switch defaultChecked />
+                    <Switch
+                      checked={settings.notificationSettings.lowStockAlerts}
+                      onCheckedChange={(checked) =>
+                        setSettings({
+                          ...settings,
+                          notificationSettings: {
+                            ...settings.notificationSettings,
+                            lowStockAlerts: checked,
+                          },
+                        })
+                      }
+                    />
                   </div>
                   <Separator />
                   <div className="flex items-center justify-between">
@@ -199,7 +441,18 @@ export default function SettingsPage() {
                         Receive alerts when new users register.
                       </p>
                     </div>
-                    <Switch />
+                    <Switch
+                      checked={settings.notificationSettings.newUserRegistrations}
+                      onCheckedChange={(checked) =>
+                        setSettings({
+                          ...settings,
+                          notificationSettings: {
+                            ...settings.notificationSettings,
+                            newUserRegistrations: checked,
+                          },
+                        })
+                      }
+                    />
                   </div>
                   <Separator />
                   <div className="flex items-center justify-between">
@@ -209,11 +462,22 @@ export default function SettingsPage() {
                         Get notified about system updates and maintenance.
                       </p>
                     </div>
-                    <Switch defaultChecked />
+                    <Switch
+                      checked={settings.notificationSettings.systemUpdates}
+                      onCheckedChange={(checked) =>
+                        setSettings({
+                          ...settings,
+                          notificationSettings: {
+                            ...settings.notificationSettings,
+                            systemUpdates: checked,
+                          },
+                        })
+                      }
+                    />
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button onClick={handleSave} disabled={isSaving}>
+                  <Button onClick={handleSaveNotifications} disabled={isSaving}>
                     {isSaving ? "Saving..." : "Save Changes"}
                   </Button>
                 </div>
@@ -238,7 +502,20 @@ export default function SettingsPage() {
                         <Button
                           variant="outline"
                           size="icon"
-                          className="h-10 w-10"
+                          className={`h-10 w-10 ${
+                            settings.appearanceSettings.theme === "light"
+                              ? "bg-primary text-primary-foreground"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            setSettings({
+                              ...settings,
+                              appearanceSettings: {
+                                ...settings.appearanceSettings,
+                                theme: "light",
+                              },
+                            })
+                          }
                         >
                           <Sun className="h-5 w-5" />
                           <span className="sr-only">Light mode</span>
@@ -249,7 +526,20 @@ export default function SettingsPage() {
                         <Button
                           variant="outline"
                           size="icon"
-                          className="h-10 w-10 bg-muted"
+                          className={`h-10 w-10 ${
+                            settings.appearanceSettings.theme === "dark"
+                              ? "bg-primary text-primary-foreground"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            setSettings({
+                              ...settings,
+                              appearanceSettings: {
+                                ...settings.appearanceSettings,
+                                theme: "dark",
+                              },
+                            })
+                          }
                         >
                           <Moon className="h-5 w-5" />
                           <span className="sr-only">Dark mode</span>
@@ -260,7 +550,20 @@ export default function SettingsPage() {
                         <Button
                           variant="outline"
                           size="icon"
-                          className="h-10 w-10"
+                          className={`h-10 w-10 ${
+                            settings.appearanceSettings.theme === "system"
+                              ? "bg-primary text-primary-foreground"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            setSettings({
+                              ...settings,
+                              appearanceSettings: {
+                                ...settings.appearanceSettings,
+                                theme: "system",
+                              },
+                            })
+                          }
                         >
                           <Palette className="h-5 w-5" />
                           <span className="sr-only">System preference</span>
@@ -272,7 +575,18 @@ export default function SettingsPage() {
                   <Separator />
                   <div className="space-y-2">
                     <Label htmlFor="density">Density</Label>
-                    <Select defaultValue="comfortable">
+                    <Select
+                      value={settings.appearanceSettings.density}
+                      onValueChange={(value) =>
+                        setSettings({
+                          ...settings,
+                          appearanceSettings: {
+                            ...settings.appearanceSettings,
+                            density: value,
+                          },
+                        })
+                      }
+                    >
                       <SelectTrigger id="density">
                         <SelectValue placeholder="Select density" />
                       </SelectTrigger>
@@ -285,7 +599,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button onClick={handleSave} disabled={isSaving}>
+                  <Button onClick={handleSaveAppearance} disabled={isSaving}>
                     {isSaving ? "Saving..." : "Save Changes"}
                   </Button>
                 </div>
@@ -305,53 +619,36 @@ export default function SettingsPage() {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="currentPassword">Current Password</Label>
-                    <Input id="currentPassword" type="password" />
+                    <Input
+                      id="currentPassword"
+                      type="password"
+                      value={currentPassword}
+                      onChange={(e) => setCurrentPassword(e.target.value)}
+                    />
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="newPassword">New Password</Label>
-                      <Input id="newPassword" type="password" />
+                      <Input
+                        id="newPassword"
+                        type="password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="confirmPassword">Confirm Password</Label>
-                      <Input id="confirmPassword" type="password" />
+                      <Input
+                        id="confirmPassword"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                      />
                     </div>
-                  </div>
-                  <Separator />
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-0.5">
-                      <Label className="text-base">
-                        Two-Factor Authentication
-                      </Label>
-                      <p className="text-sm text-muted-foreground">
-                        Add an extra layer of security to your account.
-                      </p>
-                    </div>
-                    <Switch />
-                  </div>
-                  <Separator />
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-0.5">
-                      <Label className="text-base">Session Timeout</Label>
-                      <p className="text-sm text-muted-foreground">
-                        Automatically log out after period of inactivity.
-                      </p>
-                    </div>
-                    <Select defaultValue="30">
-                      <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Select timeout" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="15">15 minutes</SelectItem>
-                        <SelectItem value="30">30 minutes</SelectItem>
-                        <SelectItem value="60">1 hour</SelectItem>
-                        <SelectItem value="never">Never</SelectItem>
-                      </SelectContent>
-                    </Select>
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button onClick={handleSave} disabled={isSaving}>
+                  <Button onClick={handleSavePassword} disabled={isSaving}>
                     {isSaving ? "Saving..." : "Save Changes"}
                   </Button>
                 </div>
@@ -363,3 +660,4 @@ export default function SettingsPage() {
     </DashboardLayout>
   );
 }
+
