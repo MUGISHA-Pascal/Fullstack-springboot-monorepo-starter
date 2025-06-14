@@ -102,6 +102,16 @@ export default function SettingsPage() {
   const handleSaveProfile = async () => {
     if (!settings) return;
 
+    const token = localStorage.getItem("auth-token");
+    if (!token) {
+      toast({
+        title: "Error",
+        description: "Authentication token not found. Please log in again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSaving(true);
     try {
       const response = await fetch(
@@ -110,7 +120,7 @@ export default function SettingsPage() {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+            Authorization: `Bearer ${token}`,
           },
           credentials: "include",
           body: JSON.stringify({
@@ -126,9 +136,20 @@ export default function SettingsPage() {
       );
 
       if (!response.ok) {
-        throw new Error("Failed to update profile");
+        const errorData = await response.json();
+        if (response.status === 401) {
+          toast({
+            title: "Authentication Error",
+            description: "Your session has expired. Please log in again.",
+            variant: "destructive",
+          });
+          return;
+        }
+        throw new Error(errorData.message || "Failed to update profile");
       }
 
+      const data = await response.json();
+      setSettings(data.data);
       toast({
         title: "Success",
         description: "Profile updated successfully",
@@ -365,9 +386,9 @@ export default function SettingsPage() {
                       <SelectValue placeholder="Select role" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="admin">Admin</SelectItem>
-                      <SelectItem value="manager">Manager</SelectItem>
-                      <SelectItem value="user">User</SelectItem>
+                      <SelectItem value="GUEST">Guest</SelectItem>
+                      <SelectItem value="USER">User</SelectItem>
+                      <SelectItem value="ADMIN">Admin</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
