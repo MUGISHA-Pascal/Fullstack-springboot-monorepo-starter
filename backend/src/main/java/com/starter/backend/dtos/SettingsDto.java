@@ -24,7 +24,7 @@ public class SettingsDto {
     private String lastName;
     @NotBlank
     @Size(min = 4,max=40)
-    @Pattern(regexp = "[0-9]{10}")
+    @Pattern(regexp = "^\\+?[1-9]\\d{1,14}$", message = "Mobile number must be in international format (e.g., +1234567890)")
     private String mobile;
     private EGender gender;
     private EStatus status = EStatus.ACTIVE;
