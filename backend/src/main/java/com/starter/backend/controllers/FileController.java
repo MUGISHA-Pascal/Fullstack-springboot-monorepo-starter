@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -62,4 +63,19 @@ return ResponseEntity.ok("File uploaded");
                 .body(fileEntity.getFile());
     }
 
+    @GetMapping
+    public ResponseEntity<List<File>> getAllFiles() {
+        List<File> files = fIleService.getAllFiles();
+        return ResponseEntity.ok(files);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteFile(@PathVariable UUID id) {
+        try {
+            fIleService.deleteFile(id);
+            return ResponseEntity.ok("File deleted successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error deleting file: " + e.getMessage());
+        }
+    }
 }
