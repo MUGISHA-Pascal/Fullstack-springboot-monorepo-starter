@@ -348,3 +348,736 @@
 2025-06-14T17:42:24.796+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.FIleService.getAllFiles() with arguements : []
 2025-06-14T17:42:24.835+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.FIleService.getAllFiles() with result : [com.starter.backend.models.File@12954372]
 2025-06-14T17:42:24.838+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-9] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with result : <200 OK OK,[com.starter.backend.models.File@12954372],[]>
+2025-06-14T17:45:29.184+02:00  INFO 12452 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-06-14T17:45:29.225+02:00  INFO 12452 --- [backend] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:45:29.247+02:00  INFO 12452 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:45:29.262+02:00  INFO 12452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:45:29.264+02:00  INFO 12452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@17a2bbca]]
+2025-06-14T17:45:29.265+02:00  INFO 12452 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:45:29.299+02:00  INFO 12452 --- [backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:45:29.341+02:00  INFO 12452 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-14T17:45:29.389+02:00  INFO 12452 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-14T17:45:30.058+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 12452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:45:30.058+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:45:30.598+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:45:30.627+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:45:31.116+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:45:31.117+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:45:31.118+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:45:31.130+02:00  INFO 12452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:45:31.131+02:00  INFO 12452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1070 ms
+2025-06-14T17:45:31.545+02:00  INFO 12452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:45:31.547+02:00  INFO 12452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:45:31.563+02:00  INFO 12452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:45:31.564+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-06-14T17:45:31.620+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@688a398f
+2025-06-14T17:45:31.623+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-06-14T17:45:31.641+02:00  WARN 12452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:45:31.646+02:00  INFO 12452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:45:31.819+02:00  INFO 12452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:45:32.094+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:45:32.507+02:00  INFO 12452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:45:32.513+02:00  WARN 12452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:45:32.842+02:00  WARN 12452 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController': Lookup method resolution failed
+2025-06-14T17:45:32.844+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:45:32.844+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-06-14T17:45:32.850+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-06-14T17:45:32.855+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-14T17:45:32.870+02:00  INFO 12452 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14T17:45:32.898+02:00 ERROR 12452 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.starter.backend.BackendApplication.main(BackendApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.starter.backend.controllers.SettingsController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@625f6065]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: SettingsDto
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3650) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2735) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.5.jar:6.2.5]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: SettingsDto
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:578) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:557) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528) ~[na:na]
+	... 30 common frames omitted
+
+2025-06-14T17:45:40.608+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 12452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:45:40.608+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:45:40.809+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:45:40.826+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:45:40.975+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:45:40.976+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:45:40.976+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:45:40.981+02:00  INFO 12452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:45:40.981+02:00  INFO 12452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 371 ms
+2025-06-14T17:45:41.098+02:00  INFO 12452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:45:41.100+02:00  INFO 12452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:45:41.104+02:00  INFO 12452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:45:41.104+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-06-14T17:45:41.122+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@6a661c57
+2025-06-14T17:45:41.122+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-06-14T17:45:41.124+02:00  WARN 12452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:45:41.125+02:00  INFO 12452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:45:41.217+02:00  INFO 12452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:45:41.333+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:45:41.553+02:00  INFO 12452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:45:41.553+02:00  WARN 12452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:45:41.774+02:00  WARN 12452 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController' defined in file [/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes/com/starter/backend/controllers/SettingsController.class]: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+2025-06-14T17:45:41.775+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:45:41.775+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-06-14T17:45:41.779+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-06-14T17:45:41.781+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-14T17:45:41.788+02:00  INFO 12452 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14T17:45:41.791+02:00 ERROR 12452 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController' defined in file [/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes/com/starter/backend/controllers/SettingsController.class]: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1343) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1228) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.starter.backend.BackendApplication.main(BackendApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.starter.backend.services.SettingsService cannot be resolved
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+
+	at com.starter.backend.controllers.SettingsController.<init>(SettingsController.java:6) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 24 common frames omitted
+
+2025-06-14T17:46:03.536+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 12452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:46:03.536+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:46:04.102+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:46:04.123+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:46:04.501+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:46:04.504+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:46:04.505+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:46:04.526+02:00  INFO 12452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:46:04.527+02:00  INFO 12452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 989 ms
+2025-06-14T17:46:05.359+02:00  INFO 12452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:46:05.369+02:00  INFO 12452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:46:05.399+02:00  INFO 12452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:46:05.403+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-06-14T17:46:05.471+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@72dff231
+2025-06-14T17:46:05.472+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-06-14T17:46:05.479+02:00  WARN 12452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:46:05.484+02:00  INFO 12452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:46:05.744+02:00  INFO 12452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:46:06.083+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:46:07.200+02:00  INFO 12452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:46:07.202+02:00  WARN 12452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:46:07.809+02:00  WARN 12452 --- [backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController' defined in file [/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes/com/starter/backend/controllers/SettingsController.class]: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+2025-06-14T17:46:07.811+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:46:07.812+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-06-14T17:46:07.815+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-06-14T17:46:07.817+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-14T17:46:07.829+02:00  INFO 12452 --- [backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14T17:46:07.832+02:00 ERROR 12452 --- [backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'settingsController' defined in file [/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes/com/starter/backend/controllers/SettingsController.class]: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1343) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1228) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.starter.backend.BackendApplication.main(BackendApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.starter.backend.controllers.SettingsController]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.starter.backend.services.SettingsService cannot be resolved
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+	The method ok(T) in the type ResponseEntity is not applicable for the arguments (ApiResponse)
+	SettingsService cannot be resolved to a type
+
+	at com.starter.backend.controllers.SettingsController.<init>(SettingsController.java:6) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 24 common frames omitted
+
+2025-06-14T17:46:09.336+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 12452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:46:09.337+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:46:10.175+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:46:10.218+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:46:10.761+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:46:10.762+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:46:10.762+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:46:10.775+02:00  INFO 12452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:46:10.775+02:00  INFO 12452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1424 ms
+2025-06-14T17:46:11.082+02:00  INFO 12452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:46:11.087+02:00  INFO 12452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:46:11.112+02:00  INFO 12452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:46:11.117+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-06-14T17:46:11.180+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@5d2212d2
+2025-06-14T17:46:11.181+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-06-14T17:46:11.185+02:00  WARN 12452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:46:11.187+02:00  INFO 12452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:46:11.376+02:00  INFO 12452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:46:11.755+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:46:12.184+02:00  INFO 12452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:46:12.185+02:00  WARN 12452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:46:12.650+02:00  WARN 12452 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:46:13.332+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:46:14.364+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:46:14.410+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:46:14.410+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6230495]]
+2025-06-14T17:46:14.411+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:46:14.413+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:46:14.424+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 5.164 seconds (process running for 362.468)
+2025-06-14T17:46:14.428+02:00  INFO 12452 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-14T17:46:16.876+02:00  INFO 12452 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-06-14T17:46:16.877+02:00  INFO 12452 --- [backend] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:46:16.878+02:00  INFO 12452 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:46:16.879+02:00  INFO 12452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:46:16.879+02:00  INFO 12452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6230495]]
+2025-06-14T17:46:16.879+02:00  INFO 12452 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:46:16.883+02:00  INFO 12452 --- [backend] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:46:16.886+02:00  INFO 12452 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-06-14T17:46:16.893+02:00  INFO 12452 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-06-14T17:46:17.032+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 12452 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:46:17.033+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:46:17.342+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:46:17.360+02:00  INFO 12452 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:46:17.555+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:46:17.560+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:46:17.562+02:00  INFO 12452 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:46:17.581+02:00  INFO 12452 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:46:17.583+02:00  INFO 12452 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 545 ms
+2025-06-14T17:46:17.940+02:00  INFO 12452 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:46:17.945+02:00  INFO 12452 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:46:17.959+02:00  INFO 12452 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:46:17.960+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-06-14T17:46:17.991+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@5e0d0077
+2025-06-14T17:46:17.992+02:00  INFO 12452 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-06-14T17:46:17.994+02:00  WARN 12452 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:46:17.995+02:00  INFO 12452 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:46:18.093+02:00  INFO 12452 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:46:18.390+02:00  INFO 12452 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:46:19.070+02:00  INFO 12452 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:46:19.072+02:00  WARN 12452 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:46:20.145+02:00  WARN 12452 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:46:20.771+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:46:22.038+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:46:22.077+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:46:22.080+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@11cbf0a]]
+2025-06-14T17:46:22.080+02:00  INFO 12452 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:46:22.083+02:00  INFO 12452 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:46:22.103+02:00  INFO 12452 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 5.097 seconds (process running for 370.147)
+2025-06-14T17:46:22.107+02:00  INFO 12452 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-14T17:47:17.416+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14T17:47:17.418+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-14T17:47:17.429+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-06-14T17:47:17.467+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-1] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:47:17.473+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-1] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:47:22.069+02:00  INFO 12452 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-06-14T17:48:11.121+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with arguements : []
+2025-06-14T17:48:11.124+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.FIleService.getAllFiles() with arguements : []
+2025-06-14T17:48:11.163+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.FIleService.getAllFiles() with result : [com.starter.backend.models.File@1de2a2df]
+2025-06-14T17:48:11.165+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with result : <200 OK OK,[com.starter.backend.models.File@1de2a2df],[]>
+2025-06-14T17:48:11.185+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with arguements : []
+2025-06-14T17:48:11.186+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.FIleService.getAllFiles() with arguements : []
+2025-06-14T17:48:11.202+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.FIleService.getAllFiles() with result : [com.starter.backend.models.File@6e56063b]
+2025-06-14T17:48:11.204+02:00  INFO 12452 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with result : <200 OK OK,[com.starter.backend.models.File@6e56063b],[]>
+2025-06-14T17:48:12.861+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:48:12.864+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:48:12.877+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:48:12.879+02:00 ERROR 12452 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:48:25.337+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:48:25.341+02:00  INFO 12452 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:48:25.346+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:48:25.347+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@11cbf0a]]
+2025-06-14T17:48:25.347+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:48:25.355+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:48:25.358+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-06-14T17:48:25.388+02:00  INFO 12452 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-06-14T17:48:33.908+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 20962 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:48:33.917+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:48:34.173+02:00  INFO 20962 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-14T17:48:34.175+02:00  INFO 20962 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-14T17:48:39.063+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:48:39.251+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:48:41.574+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:48:41.607+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:48:41.608+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:48:41.682+02:00  INFO 20962 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:48:41.684+02:00  INFO 20962 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7506 ms
+2025-06-14T17:48:42.749+02:00  INFO 20962 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:48:42.878+02:00  INFO 20962 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-06-14T17:48:43.003+02:00  INFO 20962 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:48:43.663+02:00  INFO 20962 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:48:43.741+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-14T17:48:44.520+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b647feb
+2025-06-14T17:48:44.523+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-14T17:48:44.589+02:00  WARN 20962 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:48:44.631+02:00  INFO 20962 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:48:47.142+02:00  INFO 20962 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:48:47.729+02:00  INFO 20962 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:48:49.344+02:00  INFO 20962 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:48:49.349+02:00  WARN 20962 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:48:50.434+02:00  INFO 20962 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-14T17:48:51.318+02:00  WARN 20962 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:48:53.021+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:48:55.298+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:48:55.437+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:48:55.439+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6c8290d4]]
+2025-06-14T17:48:55.442+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:48:55.465+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:48:55.497+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 22.791 seconds (process running for 24.606)
+2025-06-14T17:48:56.263+02:00  INFO 20962 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14T17:48:56.265+02:00  INFO 20962 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-14T17:48:56.271+02:00  INFO 20962 --- [backend] [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-06-14T17:49:01.471+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with arguements : []
+2025-06-14T17:49:01.477+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.FIleService.getAllFiles() with arguements : []
+2025-06-14T17:49:02.132+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.FIleService.getAllFiles() with result : [com.starter.backend.models.File@5bd9d8ae]
+2025-06-14T17:49:02.143+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with result : <200 OK OK,[com.starter.backend.models.File@5bd9d8ae],[]>
+2025-06-14T17:49:02.247+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with arguements : []
+2025-06-14T17:49:02.248+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.FIleService.getAllFiles() with arguements : []
+2025-06-14T17:49:02.272+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.FIleService.getAllFiles() with result : [com.starter.backend.models.File@1c179d8b]
+2025-06-14T17:49:02.273+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.FileController.getAllFiles() with result : <200 OK OK,[com.starter.backend.models.File@1c179d8b],[]>
+2025-06-14T17:49:03.530+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-3] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:03.554+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-3] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:03.575+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:03.587+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:29.742+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:29.754+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:49:55.354+02:00  INFO 20962 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+2025-06-14T17:51:30.235+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with arguements : [com.starter.backend.dtos.SIgninDto@539b5ac4]
+2025-06-14T17:51:31.347+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with result : <200 OK OK,com.starter.backend.payload.JwtAuthResponse@7aedbcba,[]>
+2025-06-14T17:51:42.016+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.UserController.getAllUsers() with arguements : []
+2025-06-14T17:51:42.019+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-06-14T17:51:42.031+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-06-14T17:51:42.092+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.UserController.getAllUsers() with result : [com.starter.backend.models.User@210141b4, com.starter.backend.models.User@7040d75d]
+2025-06-14T17:51:42.179+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@32f476b5]
+2025-06-14T17:51:42.181+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@32f476b5]
+2025-06-14T17:51:44.377+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.UserController.getAllUsers() with arguements : []
+2025-06-14T17:51:44.405+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.UserController.getAllUsers() with result : [com.starter.backend.models.User@57c720f9, com.starter.backend.models.User@c4b064e]
+2025-06-14T17:51:44.425+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-06-14T17:51:44.426+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-06-14T17:51:44.442+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@504ac2a0]
+2025-06-14T17:51:44.443+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@504ac2a0]
+2025-06-14T17:51:46.266+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:51:46.271+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-5] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:51:46.281+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-7] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:51:46.285+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-7] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:55:42.590+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:55:42.621+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:55:42.669+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@79f50513
+2025-06-14T17:55:42.671+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@7f0a1c0f,[]>
+2025-06-14T17:56:01.692+02:00  WARN 20962 --- [backend] [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.starter.backend.enums.ERoleType` from String "manager": not one of the values accepted for Enum class: [GUEST, USER, ADMIN]]
+2025-06-14T17:56:01.700+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-4] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:56:45.817+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:56:45.819+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:56:45.829+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@6f0d3500
+2025-06-14T17:56:45.830+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@6d611e2f,[]>
+2025-06-14T17:57:31.920+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updatePassword(UUID,PasswordUpdate) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$PasswordUpdate@d13311b]
+2025-06-14T17:57:31.921+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: void com.starter.backend.services.SettingsService.updatePassword(UUID,PasswordUpdate) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$PasswordUpdate@d13311b]
+2025-06-14T17:57:32.605+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: void com.starter.backend.services.SettingsService.updatePassword(UUID,PasswordUpdate) with result : null
+2025-06-14T17:57:32.606+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updatePassword(UUID,PasswordUpdate) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@2d8bf961,[]>
+2025-06-14T17:57:51.566+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with arguements : [com.starter.backend.dtos.SIgninDto@4c0a03b1]
+2025-06-14T17:57:51.942+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with error : Bad credentials
+2025-06-14T17:57:51.961+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-2] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Bad credentials
+2025-06-14T17:57:51.979+02:00 ERROR 20962 --- [backend] [http-nio-8081-exec-2] c.s.backend.security.JwtAuthEntryPoint   : responding with unauthorized error.message - Full authentication is required to access this resource
+2025-06-14T17:57:55.551+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with arguements : [com.starter.backend.dtos.SIgninDto@54094c49]
+2025-06-14T17:57:55.793+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.AuthController.signin(SIgninDto) with result : <200 OK OK,com.starter.backend.payload.JwtAuthResponse@6cebec5a,[]>
+2025-06-14T17:57:58.996+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-06-14T17:57:59.000+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-06-14T17:57:59.020+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@6a9b38a9]
+2025-06-14T17:57:59.021+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@6a9b38a9]
+2025-06-14T17:57:59.273+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.UserController.getAllUsers() with arguements : []
+2025-06-14T17:57:59.351+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.UserController.getAllUsers() with result : [com.starter.backend.models.User@4fe5e355, com.starter.backend.models.User@408e240f]
+2025-06-14T17:57:59.438+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.ProductController.getAllProducts() with arguements : []
+2025-06-14T17:57:59.446+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.services.ProductService.getAllProducts() with arguements : []
+2025-06-14T17:57:59.477+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.services.ProductService.getAllProducts() with result : [com.starter.backend.models.Product@c0c68f3]
+2025-06-14T17:57:59.480+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.ProductController.getAllProducts() with result : [com.starter.backend.models.Product@c0c68f3]
+2025-06-14T17:57:59.574+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Entering method: List com.starter.backend.controllers.UserController.getAllUsers() with arguements : []
+2025-06-14T17:57:59.598+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-7] c.starter.backend.aspects.LoggingAspect  : Exiting method: List com.starter.backend.controllers.UserController.getAllUsers() with result : [com.starter.backend.models.User@3683e2e7, com.starter.backend.models.User@c4a186b]
+2025-06-14T17:57:59.977+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:57:59.978+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:57:59.985+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@eb44437
+2025-06-14T17:57:59.986+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@30b2c822,[]>
+2025-06-14T17:58:00.058+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:58:00.060+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:58:00.074+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@1244f766
+2025-06-14T17:58:00.076+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@7c652e77,[]>
+2025-06-14T17:58:09.225+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@3b97ab8]
+2025-06-14T17:58:09.226+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@3b97ab8]
+2025-06-14T17:58:09.233+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@3b97ab8
+2025-06-14T17:58:09.234+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@7579594a,[]>
+2025-06-14T17:58:09.636+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@385df6b8]
+2025-06-14T17:58:09.637+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@385df6b8]
+2025-06-14T17:58:09.641+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@385df6b8
+2025-06-14T17:58:09.642+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-3] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@725c79b6,[]>
+2025-06-14T17:58:13.146+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:58:13.148+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T17:58:13.157+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@38a7e4bb
+2025-06-14T17:58:13.158+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-5] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@3dd3ebef,[]>
+2025-06-14T17:58:19.742+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@5083e39d]
+2025-06-14T17:58:19.743+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@5083e39d]
+2025-06-14T17:58:19.747+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@5083e39d
+2025-06-14T17:58:19.748+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@96295ff,[]>
+2025-06-14T17:59:15.408+02:00  INFO 20962 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-06-14T17:59:15.425+02:00  INFO 20962 --- [backend] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:59:15.439+02:00  INFO 20962 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:59:15.450+02:00  INFO 20962 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:59:15.451+02:00  INFO 20962 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6c8290d4]]
+2025-06-14T17:59:15.452+02:00  INFO 20962 --- [backend] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:59:15.474+02:00  INFO 20962 --- [backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:15.486+02:00  INFO 20962 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-14T17:59:15.587+02:00  INFO 20962 --- [backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-14T17:59:15.942+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 20962 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:59:15.943+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:59:17.996+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:59:18.065+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2025-06-14T17:59:18.778+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:59:18.782+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:59:18.783+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:59:18.800+02:00  INFO 20962 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:59:18.800+02:00  INFO 20962 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2848 ms
+2025-06-14T17:59:19.360+02:00  INFO 20962 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:59:19.366+02:00  INFO 20962 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:59:19.388+02:00  INFO 20962 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:59:19.391+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-06-14T17:59:19.508+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5bb91726
+2025-06-14T17:59:19.509+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-06-14T17:59:19.519+02:00  WARN 20962 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:59:19.525+02:00  INFO 20962 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:59:19.962+02:00  INFO 20962 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:59:20.028+02:00  WARN 20962 --- [backend] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-06-14T17:59:20.029+02:00  WARN 20962 --- [backend] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukm9ggfvif86mvq5382j88cequn" of relation "notification_settings" does not exist, skipping
+2025-06-14T17:59:20.522+02:00  INFO 20962 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:21.827+02:00  INFO 20962 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:59:21.830+02:00  WARN 20962 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:59:23.975+02:00  WARN 20962 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:59:25.617+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:59:28.298+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:59:28.458+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:59:28.460+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4269b30f]]
+2025-06-14T17:59:28.463+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:59:28.478+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:59:28.528+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 12.689 seconds (process running for 657.637)
+2025-06-14T17:59:28.558+02:00  INFO 20962 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-14T17:59:29.832+02:00  INFO 20962 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-06-14T17:59:29.845+02:00  INFO 20962 --- [backend] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:59:29.860+02:00  INFO 20962 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:59:29.875+02:00  INFO 20962 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:59:29.877+02:00  INFO 20962 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@4269b30f]]
+2025-06-14T17:59:29.878+02:00  INFO 20962 --- [backend] [Thread-7] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:59:29.895+02:00  INFO 20962 --- [backend] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:29.904+02:00  INFO 20962 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-06-14T17:59:29.939+02:00  INFO 20962 --- [backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-06-14T17:59:30.469+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 20962 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:59:30.472+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:59:34.242+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:59:34.422+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 6 JPA repository interfaces.
+2025-06-14T17:59:35.574+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:59:35.582+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:59:35.584+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:59:35.623+02:00  INFO 20962 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:59:35.624+02:00  INFO 20962 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5132 ms
+2025-06-14T17:59:37.371+02:00  INFO 20962 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:59:37.389+02:00  INFO 20962 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:59:37.447+02:00  INFO 20962 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:59:37.457+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-06-14T17:59:37.594+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@3df9ee87
+2025-06-14T17:59:37.597+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-06-14T17:59:37.616+02:00  WARN 20962 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:59:37.624+02:00  INFO 20962 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:59:38.771+02:00  INFO 20962 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:59:40.214+02:00  INFO 20962 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:42.833+02:00  INFO 20962 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:59:42.848+02:00  WARN 20962 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:59:46.497+02:00  WARN 20962 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:59:48.895+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:59:51.507+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:59:51.726+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:59:51.728+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@17525e41]]
+2025-06-14T17:59:51.729+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:59:51.739+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:59:51.773+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 21.55 seconds (process running for 680.882)
+2025-06-14T17:59:51.812+02:00  INFO 20962 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-14T17:59:53.005+02:00  INFO 20962 --- [backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-06-14T17:59:53.016+02:00  INFO 20962 --- [backend] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T17:59:53.024+02:00  INFO 20962 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T17:59:53.033+02:00  INFO 20962 --- [backend] [Thread-11] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T17:59:53.036+02:00  INFO 20962 --- [backend] [Thread-11] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@17525e41]]
+2025-06-14T17:59:53.037+02:00  INFO 20962 --- [backend] [Thread-11] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T17:59:53.049+02:00  INFO 20962 --- [backend] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:53.053+02:00  INFO 20962 --- [backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-06-14T17:59:53.074+02:00  INFO 20962 --- [backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-06-14T17:59:53.293+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 20962 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T17:59:53.294+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T17:59:54.457+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T17:59:54.514+02:00  INFO 20962 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 6 JPA repository interfaces.
+2025-06-14T17:59:55.006+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T17:59:55.008+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T17:59:55.009+02:00  INFO 20962 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T17:59:55.025+02:00  INFO 20962 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T17:59:55.025+02:00  INFO 20962 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1727 ms
+2025-06-14T17:59:55.487+02:00  INFO 20962 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T17:59:55.492+02:00  INFO 20962 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T17:59:55.504+02:00  INFO 20962 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T17:59:55.506+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-06-14T17:59:55.552+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@792960b
+2025-06-14T17:59:55.553+02:00  INFO 20962 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-06-14T17:59:55.557+02:00  WARN 20962 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T17:59:55.558+02:00  INFO 20962 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T17:59:55.747+02:00  INFO 20962 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T17:59:56.170+02:00  INFO 20962 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T17:59:56.741+02:00  INFO 20962 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T17:59:56.742+02:00  WARN 20962 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T17:59:57.657+02:00  WARN 20962 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T17:59:58.298+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T17:59:59.480+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T17:59:59.524+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T17:59:59.524+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25d45965]]
+2025-06-14T17:59:59.525+02:00  INFO 20962 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T17:59:59.529+02:00  INFO 20962 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T17:59:59.544+02:00  INFO 20962 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 6.329 seconds (process running for 688.653)
+2025-06-14T17:59:59.547+02:00  INFO 20962 --- [backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-14T18:00:13.868+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14T18:00:13.868+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-14T18:00:13.872+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-06-14T18:00:13.994+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updatePassword(UUID,PasswordUpdate) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$PasswordUpdate@57f4119f]
+2025-06-14T18:00:13.995+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: void com.starter.backend.services.SettingsService.updatePassword(UUID,PasswordUpdate) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$PasswordUpdate@57f4119f]
+2025-06-14T18:00:14.343+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: void com.starter.backend.services.SettingsService.updatePassword(UUID,PasswordUpdate) with result : null
+2025-06-14T18:00:14.345+02:00  INFO 20962 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updatePassword(UUID,PasswordUpdate) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@16f7be18,[]>
+2025-06-14T18:00:40.400+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14T18:00:40.403+02:00  INFO 20962 --- [backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-14T18:00:40.406+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-14T18:00:40.407+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@25d45965]]
+2025-06-14T18:00:40.407+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-14T18:00:40.415+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T18:00:40.417+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-06-14T18:00:40.426+02:00  INFO 20962 --- [backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-06-14T18:00:46.840+02:00  INFO 33225 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Starting BackendApplication using Java 23.0.2 with PID 33225 (/media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend/target/classes started by pascal in /media/pascal/AE86B21786B1E04F/Users/pc/Documents/projects/github-workshop/Fullstack-springboot-monorepo-starter/backend)
+2025-06-14T18:00:46.843+02:00  INFO 33225 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : The following 1 profile is active: "dev"
+2025-06-14T18:00:46.934+02:00  INFO 33225 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-14T18:00:46.935+02:00  INFO 33225 --- [backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-14T18:00:48.818+02:00  INFO 33225 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14T18:00:48.929+02:00  INFO 33225 --- [backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2025-06-14T18:00:50.352+02:00  INFO 33225 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-14T18:00:50.375+02:00  INFO 33225 --- [backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-14T18:00:50.376+02:00  INFO 33225 --- [backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-06-14T18:00:50.427+02:00  INFO 33225 --- [backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-14T18:00:50.428+02:00  INFO 33225 --- [backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3492 ms
+2025-06-14T18:00:51.057+02:00  INFO 33225 --- [backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14T18:00:51.146+02:00  INFO 33225 --- [backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-06-14T18:00:51.194+02:00  INFO 33225 --- [backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-14T18:00:51.608+02:00  INFO 33225 --- [backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14T18:00:51.654+02:00  INFO 33225 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-14T18:00:52.202+02:00  INFO 33225 --- [backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c6593ed
+2025-06-14T18:00:52.205+02:00  INFO 33225 --- [backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-14T18:00:52.250+02:00  WARN 33225 --- [backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-14T18:00:52.283+02:00  INFO 33225 --- [backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14T18:00:53.956+02:00  INFO 33225 --- [backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14T18:00:54.359+02:00  INFO 33225 --- [backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14T18:00:55.288+02:00  INFO 33225 --- [backend] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14T18:00:55.290+02:00  WARN 33225 --- [backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14T18:00:55.878+02:00  INFO 33225 --- [backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-14T18:00:56.481+02:00  WARN 33225 --- [backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14T18:00:57.527+02:00  INFO 33225 --- [backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-14T18:01:00.374+02:00  INFO 33225 --- [backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-14T18:01:00.562+02:00  INFO 33225 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-14T18:01:00.564+02:00  INFO 33225 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3f311a4b]]
+2025-06-14T18:01:00.566+02:00  INFO 33225 --- [backend] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-14T18:01:00.610+02:00  INFO 33225 --- [backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-14T18:01:00.663+02:00  INFO 33225 --- [backend] [restartedMain] com.starter.backend.BackendApplication   : Started BackendApplication in 14.595 seconds (process running for 15.988)
+2025-06-14T18:01:01.187+02:00  INFO 33225 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14T18:01:01.189+02:00  INFO 33225 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-14T18:01:01.196+02:00  INFO 33225 --- [backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-06-14T18:01:08.507+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:08.510+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:08.945+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@38473e3b
+2025-06-14T18:01:08.948+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@4065e3a3,[]>
+2025-06-14T18:01:15.187+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@2a0ebd8e]
+2025-06-14T18:01:15.188+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@2a0ebd8e]
+2025-06-14T18:01:15.213+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@42ffcb4e
+2025-06-14T18:01:15.233+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-4] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@627f7c8e,[]>
+2025-06-14T18:01:18.943+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:18.948+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:18.973+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@4e580e2
+2025-06-14T18:01:18.976+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-6] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@676a8686,[]>
+2025-06-14T18:01:24.482+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@704606bc]
+2025-06-14T18:01:24.484+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@704606bc]
+2025-06-14T18:01:24.496+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@36ac65d7
+2025-06-14T18:01:24.503+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-8] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@58476d17,[]>
+2025-06-14T18:01:28.897+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:28.898+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Entering method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8]
+2025-06-14T18:01:28.915+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: SettingsDto com.starter.backend.services.SettingsService.getUserSettings(UUID) with result : com.starter.backend.dtos.SettingsDto@65e22aa5
+2025-06-14T18:01:28.917+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-10] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.getUserSettings(UUID) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@29de2d55,[]>
+2025-06-14T18:01:33.354+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@5a472162]
+2025-06-14T18:01:33.356+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Entering method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with arguements : [8c2414da-c712-46c9-8e1c-b8812cff8ec8, com.starter.backend.dtos.SettingsDto$NotificationSettings@5a472162]
+2025-06-14T18:01:33.368+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: NotificationSettings com.starter.backend.services.SettingsService.updateNotificationSettings(UUID,NotificationSettings) with result : com.starter.backend.dtos.SettingsDto$NotificationSettings@39273c4e
+2025-06-14T18:01:33.375+02:00  INFO 33225 --- [backend] [http-nio-8081-exec-2] c.starter.backend.aspects.LoggingAspect  : Exiting method: ResponseEntity com.starter.backend.controllers.SettingsController.updateNotificationSettings(UUID,NotificationSettings) with result : <200 OK OK,com.starter.backend.payload.ApiResponse@18260d8d,[]>
+2025-06-14T18:02:00.479+02:00  INFO 33225 --- [backend] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
