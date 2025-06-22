@@ -1,11 +1,10 @@
 package com.starter.backend.controllers;
 
-import com.starter.backend.dtos.ProductDto;
 import com.starter.backend.models.Product;
 import com.starter.backend.services.ProductService;
-import com.starter.backend.util.Constants;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,47 +12,39 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/products")
+@RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
 
-    @Autowired
-    public ProductController(ProductService productService){
-        this.productService = productService;
-    }
-
-    @GetMapping("/order")
-    public Page<Product> getPaginatedAndSortedProducts(@RequestParam(value = "page" ,defaultValue = Constants.DEFAULT_PAGE_NUMBER) int page, @RequestParam(value = "size",defaultValue = Constants.DEFAULT_PAGE_SIZE) int size, @RequestParam(value = "column") String column){
-        return productService.productsPagination(page,size,column);
-    }
     @GetMapping
-    public List<Product> getAllProducts(){
-        return productService.getAllProducts();
-    }
-    @GetMapping("/category/{category}")
-    public List<Product> getAllProductsByCategory(@PathVariable String category){
-        return this.productService.findProductsByCategory(category);
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<List<Product>> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
     }
 
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable UUID id){
-        return productService.getProduct(id);
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<Product> getProductById(@PathVariable UUID id) {
+        return ResponseEntity.ok(productService.getProductById(id));
     }
 
     @PostMapping
-    public Product addProduct(@RequestBody ProductDto productDto){
-        return productService.addProduct(productDto);
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        return ResponseEntity.ok(productService.createProduct(product));
     }
 
     @PutMapping("/{id}")
-    public Product updateProduct(@PathVariable UUID id, @RequestBody ProductDto productDto){
-        System.out.println("called");
-        return productService.updateProduct(id, productDto);
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @RequestBody Product product) {
+        return ResponseEntity.ok(productService.updateProduct(id, product));
     }
 
     @DeleteMapping("/{id}")
-    public String deleteProduct(@PathVariable UUID id){
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteProduct(@PathVariable UUID id) {
         productService.deleteProduct(id);
-        return "Product with id " + id + " has been deleted successfully.";
+        return ResponseEntity.ok().build();
     }
 }

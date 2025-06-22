@@ -6,69 +6,78 @@ import { Badge } from "@/components/ui/badge"
 import { Package, Users, FileText, TrendingUp, AlertTriangle } from "lucide-react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { useAuth } from "@/components/auth-provider"
+import { useToast } from "@/hooks/use-toast"
 
 interface DashboardStats {
   totalProducts: number
   totalUsers: number
   totalFiles: number
   lowStockProducts: number
-  recentActivity: Array<{
-    id: string
-    type: string
-    message: string
-    timestamp: string
-  }>
+  productGrowth: number
+  userGrowth: number
+  fileGrowth: number
+}
+
+interface Activity {
+  id: string
+  type: string
+  message: string
+  timestamp: string
 }
 
 export default function DashboardPage() {
   const [stats, setStats] = useState<DashboardStats | null>(null)
+  const [activities, setActivities] = useState<Activity[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useAuth()
+  const { toast } = useToast()
 
   useEffect(() => {
-    const fetchStats = async () => {
+    const fetchDashboardData = async () => {
       try {
-        // Simulate API calls to get dashboard stats
-        const [productsRes, usersRes] = await Promise.all([fetch("/api/products"), fetch("/api/users")])
+        const token = localStorage.getItem("auth-token")
+        if (!token) {
+          throw new Error("No authentication token found")
+        }
 
-        const products = await productsRes.json()
-        const users = await usersRes.json()
+        const [statsRes, activityRes] = await Promise.all([
+          fetch(`http://localhost:8081/api/v1/dashboard/stats/${user?.id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }),
+          fetch(`http://localhost:8081/api/v1/dashboard/activity/${user?.id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }),
+        ])
 
-        setStats({
-          totalProducts: products.length || 0,
-          totalUsers: users.length || 0,
-          totalFiles: 12, // Mock data
-          lowStockProducts: products.filter((p: any) => p.quantity < 10).length || 0,
-          recentActivity: [
-            {
-              id: "1",
-              type: "product",
-              message: "New product 'Wireless Headphones' added",
-              timestamp: "2 hours ago",
-            },
-            {
-              id: "2",
-              type: "user",
-              message: "User John Doe registered",
-              timestamp: "4 hours ago",
-            },
-            {
-              id: "3",
-              type: "inventory",
-              message: "Low stock alert for 'Gaming Mouse'",
-              timestamp: "6 hours ago",
-            },
-          ],
-        })
+        if (!statsRes.ok || !activityRes.ok) {
+          throw new Error("Failed to fetch dashboard data")
+        }
+
+        const statsData = await statsRes.json()
+        const activityData = await activityRes.json()
+
+        setStats(statsData.data)
+        setActivities(activityData.data)
       } catch (error) {
-        console.error("Failed to fetch dashboard stats:", error)
+        console.error("Failed to fetch dashboard data:", error)
+        toast({
+          title: "Error",
+          description: "Failed to load dashboard data",
+          variant: "destructive",
+        })
       } finally {
         setIsLoading(false)
       }
     }
 
-    fetchStats()
-  }, [])
+    if (user?.id) {
+      fetchDashboardData()
+    }
+  }, [user?.id, toast])
 
   if (isLoading) {
     return (
@@ -103,7 +112,7 @@ export default function DashboardPage() {
             <CardContent>
               <div className="text-2xl font-bold">{stats?.totalProducts || 0}</div>
               <p className="text-xs text-muted-foreground">
-                <span className="text-green-600">+12%</span> from last month
+                <span className="text-green-600">+{stats?.productGrowth || 0}%</span> from last month
               </p>
             </CardContent>
           </Card>
@@ -116,7 +125,7 @@ export default function DashboardPage() {
             <CardContent>
               <div className="text-2xl font-bold">{stats?.totalUsers || 0}</div>
               <p className="text-xs text-muted-foreground">
-                <span className="text-green-600">+5%</span> from last month
+                <span className="text-green-600">+{stats?.userGrowth || 0}%</span> from last month
               </p>
             </CardContent>
           </Card>
@@ -129,7 +138,7 @@ export default function DashboardPage() {
             <CardContent>
               <div className="text-2xl font-bold">{stats?.totalFiles || 0}</div>
               <p className="text-xs text-muted-foreground">
-                <span className="text-green-600">+8%</span> from last month
+                <span className="text-green-600">+{stats?.fileGrowth || 0}%</span> from last month
               </p>
             </CardContent>
           </Card>
@@ -153,7 +162,7 @@ export default function DashboardPage() {
               <CardDescription>Latest updates from your system</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {stats?.recentActivity.map((activity) => (
+              {activities.map((activity) => (
                 <div key={activity.id} className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     {activity.type === "product" && <Package className="h-4 w-4 text-blue-600" />}

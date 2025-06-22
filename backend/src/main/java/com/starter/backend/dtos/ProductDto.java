@@ -1,21 +1,19 @@
 package com.starter.backend.dtos;
 
-import com.starter.backend.models.Inventory;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@ToString
+@Data
 public class ProductDto {
     private String name;
     private String description;
-    private int price;
-    private int quantity;
+    private Double price;
+    private Integer quantity;
     private String category;
-    private UpdateInventoryDto inventory;
-//    private String image_url;
+    private InventoryDto inventory;
+
+    @Data
+    public static class InventoryDto {
+        private Integer quantity;
+        private String location;
+    }
 }

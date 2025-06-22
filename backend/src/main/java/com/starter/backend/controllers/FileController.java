@@ -31,7 +31,7 @@ return ResponseEntity.ok("File uploaded");
         File file = fIleService.getFile(id);
         if(file != null){
             return ResponseEntity.ok()
-                .header("Content-Disposition", "attachment; filename=\"" + file.getFilename() + "\"")
+                .header("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"")
                 .body(file.getFile());
         }else{
             return ResponseEntity.status(404).body(null);
@@ -45,7 +45,7 @@ return ResponseEntity.ok("File uploaded");
             return ResponseEntity.notFound().build();
         }
 
-        String filename = fileEntity.getFilename().toLowerCase();
+        String filename = fileEntity.getName().toLowerCase();
         String contentType = "application/octet-stream";
 
         if (filename.endsWith(".png")) {

@@ -25,7 +25,8 @@ public class Inventory {
     private UUID id;
     private int quantity;
     private String location;
-    @OneToOne(mappedBy = "inventory")
+    @OneToOne
+    @JoinColumn(name = "product_id")
     @JsonIgnore
     private Product product;
     @CreatedDate

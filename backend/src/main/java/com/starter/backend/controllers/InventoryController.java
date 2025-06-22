@@ -1,7 +1,7 @@
 package com.starter.backend.controllers;
 
 import com.starter.backend.dtos.UpdateInventoryDto;
-import com.starter.backend.models.Product;
+import com.starter.backend.models.Inventory;
 import com.starter.backend.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ public class InventoryController {
     @Autowired
     InventoryService inventoryService;
     @PutMapping("/update/{id}")
-    public ResponseEntity<Product> updateInventory(@PathVariable("id") UUID id, @RequestBody UpdateInventoryDto updateInventoryDto) {
-        return inventoryService.updateInventory(id,updateInventoryDto);
+    public ResponseEntity<Inventory> updateInventory(@PathVariable("id") UUID id, @RequestBody UpdateInventoryDto updateInventoryDto) {
+        return ResponseEntity.ok(inventoryService.updateInventory(id, updateInventoryDto));
     }
 }

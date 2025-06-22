@@ -63,9 +63,15 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [productToDelete, setProductToDelete] = useState<string | null>(null);
   const [editingProduct, setEditingProduct] = useState<Product | null | any>(
     null
   );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(9);
+  const [sortField, setSortField] = useState<keyof Product>("name");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const { toast } = useToast();
 
   const [newProduct, setNewProduct] = useState({
@@ -101,12 +107,39 @@ export default function ProductsPage() {
       );
     }
 
+    // Sort the filtered products
+    filtered.sort((a, b) => {
+      const aValue = a[sortField];
+      const bValue = b[sortField];
+      
+      if (typeof aValue === "string" && typeof bValue === "string") {
+        return sortDirection === "asc"
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+      
+      if (typeof aValue === "number" && typeof bValue === "number") {
+        return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
+      }
+      
+      return 0;
+    });
+
     setFilteredProducts(filtered);
-  }, [products, searchTerm, selectedCategory]);
+  }, [products, searchTerm, selectedCategory, sortField, sortDirection]);
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:8081/api/v1/products");
+      const token = localStorage.getItem("auth-token");
+      if (!token) {
+        throw new Error("Authentication token not found. Please log in again.");
+      }
+
+      const response = await fetch("http://localhost:8081/api/v1/products", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         const productsWithInventory = data.map((product: Product) => ({
@@ -114,11 +147,13 @@ export default function ProductsPage() {
           inventory: product.inventory || { quantity: 0, location: "" },
         }));
         setProducts(productsWithInventory);
+      } else {
+        throw new Error("Failed to fetch products");
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to fetch products",
+        description: error instanceof Error ? error.message : "Failed to fetch products",
         variant: "destructive",
       });
     } finally {
@@ -128,22 +163,22 @@ export default function ProductsPage() {
 
   const handleAddProduct = async () => {
     try {
+      const token = localStorage.getItem("auth-token");
+      if (!token) {
+        throw new Error("Authentication token not found. Please log in again.");
+      }
+
       const productDto = {
         name: newProduct.name,
         description: newProduct.description,
-        price: Number.parseInt(newProduct.price),
-        quantity: Number.parseInt(newProduct.quantity),
+        price: Number(newProduct.price),
+        quantity: Number(newProduct.quantity),
         category: newProduct.category,
         inventory: {
-          quantity: Number.parseInt(newProduct.inventory.quantity),
+          quantity: Number(newProduct.inventory.quantity),
           location: newProduct.inventory.location,
         },
       };
-
-      console.log(
-        "Product DTO being sent:",
-        JSON.stringify(productDto, null, 2)
-      );
 
       // Validate required fields
       if (
@@ -177,6 +212,7 @@ export default function ProductsPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(productDto),
       });
@@ -201,16 +237,12 @@ export default function ProductsPage() {
         fetchProducts();
       } else {
         const errorData = await response.json();
-        toast({
-          title: "Error",
-          description: errorData.message || "Failed to add product",
-          variant: "destructive",
-        });
+        throw new Error(errorData.message || "Failed to add product");
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to add product",
+        description: error instanceof Error ? error.message : "Failed to add product",
         variant: "destructive",
       });
     }
@@ -227,18 +259,23 @@ export default function ProductsPage() {
   };
   const handleEditProduct = async () => {
     try {
-      if (!editingProduct) return;
+      const token = localStorage.getItem("auth-token");
+      if (!token) {
+        throw new Error("Authentication token not found. Please log in again.");
+      }
+
+      if (!editingProduct?.id) {
+        throw new Error("No product selected for editing");
+      }
 
       const productDto = {
         name: editingProduct.name,
         description: editingProduct.description,
-        price: Number.parseInt(editingProduct.price.toString()),
-        quantity: Number.parseInt(editingProduct.quantity.toString()),
+        price: Number(editingProduct.price),
+        quantity: Number(editingProduct.quantity),
         category: editingProduct.category,
         inventory: {
-          quantity: Number.parseInt(
-            editingProduct.inventory.quantity.toString()
-          ),
+          quantity: Number(editingProduct.inventory.quantity),
           location: editingProduct.inventory.location,
         },
       };
@@ -277,6 +314,7 @@ export default function ProductsPage() {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(productDto),
         }
@@ -292,49 +330,84 @@ export default function ProductsPage() {
         fetchProducts();
       } else {
         const errorData = await response.json();
-        console.log(errorData);
-        toast({
-          title: "Error",
-          description: errorData.message || "Failed to update product",
-          variant: "destructive",
-        });
+        throw new Error(errorData.message || "Failed to update product");
       }
     } catch (error) {
-      console.log(error);
       toast({
         title: "Error",
-        description: "Failed to update product",
+        description: error instanceof Error ? error.message : "Failed to update product",
         variant: "destructive",
       });
     }
   };
 
+  const handleDeleteClick = (id: string) => {
+    setProductToDelete(id);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleDeleteConfirm = async () => {
+    if (!productToDelete) return;
+    await handleDeleteProduct(productToDelete);
+    setIsDeleteDialogOpen(false);
+    setProductToDelete(null);
+  };
+
   const handleDeleteProduct = async (id: string) => {
     try {
-      const response = await fetch(
-        `http://localhost:8081/api/v1/products/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const token = localStorage.getItem("auth-token");
+      if (!token) {
+        throw new Error("Authentication token not found. Please log in again.");
+      }
+
+      const response = await fetch(`http://localhost:8081/api/v1/products/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (response.ok) {
         toast({
           title: "Success",
           description: "Product deleted successfully",
         });
+        setIsDeleteDialogOpen(false);
+        setProductToDelete(null);
         fetchProducts();
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to delete product");
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to delete product",
+        description: error instanceof Error ? error.message : "Failed to delete product",
         variant: "destructive",
       });
     }
   };
 
   const categories = [...new Set(products.map((p) => p.category))];
+
+  // Calculate pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const handleSort = (field: keyof Product) => {
+    if (field === sortField) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortField(field);
+      setSortDirection("asc");
+    }
+  };
 
   if (isLoading) {
     return (
@@ -513,8 +586,40 @@ export default function ProductsPage() {
           </Select>
         </div>
 
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleSort("name")}
+              className={sortField === "name" ? "bg-accent" : ""}
+            >
+              Name {sortField === "name" && (sortDirection === "asc" ? "↑" : "↓")}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleSort("price")}
+              className={sortField === "price" ? "bg-accent" : ""}
+            >
+              Price {sortField === "price" && (sortDirection === "asc" ? "↑" : "↓")}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleSort("quantity")}
+              className={sortField === "quantity" ? "bg-accent" : ""}
+            >
+              Quantity {sortField === "quantity" && (sortDirection === "asc" ? "↑" : "↓")}
+            </Button>
+          </div>
+          <div className="text-sm text-muted-foreground">
+            Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredProducts.length)} of {filteredProducts.length} products
+          </div>
+        </div>
+
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {filteredProducts.map((product) => (
+          {currentItems.map((product) => (
             <Card key={product.id}>
               <CardHeader>
                 <div className="flex justify-between items-start">
@@ -533,7 +638,7 @@ export default function ProductsPage() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => handleDeleteProduct(product.id!)}
+                      onClick={() => handleDeleteClick(product.id!)}
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -590,6 +695,37 @@ export default function ProductsPage() {
             </Card>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex justify-center gap-2 mt-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </Button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={currentPage === page ? "default" : "outline"}
+                size="sm"
+                onClick={() => handlePageChange(page)}
+              >
+                {page}
+              </Button>
+            ))}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </Button>
+          </div>
+        )}
 
         {/* Edit Product Dialog */}
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
@@ -736,6 +872,26 @@ export default function ProductsPage() {
                 Cancel
               </Button>
               <Button onClick={handleEditProduct}>Update Product</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* Delete Confirmation Dialog */}
+        <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Delete Product</DialogTitle>
+              <DialogDescription>
+                Are you sure you want to delete this product? This action cannot be undone.
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>
+                Cancel
+              </Button>
+              <Button variant="destructive" onClick={handleDeleteConfirm}>
+                Delete
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
