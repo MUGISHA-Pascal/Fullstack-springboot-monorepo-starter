@@ -1,0 +1,26 @@
+# Development Dockerfile with hot reload
+FROM maven:3.9.9-eclipse-temurin-21
+
+# Set working directory
+WORKDIR /app
+
+# Copy pom.xml and download dependencies first (for better caching)
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy source code
+COPY src ./src
+
+# Expose port
+EXPOSE 8081
+
+# Expose debug port for remote debugging
+EXPOSE 5005
+
+# Set environment variables for development
+ENV SPRING_PROFILES_ACTIVE=dev
+ENV SPRING_DEVTOOLS_LIVERELOAD_ENABLED=true
+ENV SPRING_DEVTOOLS_RESTART_ENABLED=true
+
+# Run the application with devtools for hot reload
+CMD ["mvn", "spring-boot:run", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'"] 
